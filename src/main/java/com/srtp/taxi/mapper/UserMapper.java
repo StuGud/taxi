@@ -5,10 +5,9 @@ import com.srtp.taxi.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
-/**
- * Created by david.w on 2020/4/7.
- */
+@Component
 @Mapper
 public interface UserMapper {
     /**
@@ -17,7 +16,7 @@ public interface UserMapper {
      * @return  返回null,无此用户
      */
     @Select("select * from t_user where username=#{username}")
-    public User queryUserByUsername(String username);
+    User queryUserByUsername(String username);
 
     /**
      * 根据用户名密码查询用户信息
@@ -26,7 +25,7 @@ public interface UserMapper {
      * @return  返回null,无此用户
      */
     @Select("select * from t_user where username=#{username} and password=#{password}")
-    public User queryUserByUsernameAndPassword(String username,String password);
+    User queryUserByUsernameAndPassword(String username, String password);
 
     /**
      * 保存用户信息
@@ -34,7 +33,5 @@ public interface UserMapper {
      * @return 返回-1,操作失败
      */
     @Insert("insert into t_user (username,password,phone,email) values (#{username},#{password},#{phone},#{email}")
-    public int saveUser(User user);
-
-
+    User saveUser(User user);
 }

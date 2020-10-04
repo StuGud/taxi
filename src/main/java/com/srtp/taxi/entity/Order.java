@@ -7,9 +7,10 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
-public class Reservation {
+public class Order {
     private long id;
     private long userId;
+    private long driverId;
     //起点经纬度
     private double start_lng;
     private double start_lat;
@@ -18,7 +19,8 @@ public class Reservation {
     private double end_lat;
     //出发时间
     private Date startAt;
+    //结束时间
+    private Date finishedAt;
     //乘客数
     private int num;
-    private boolean isDispatched;
 }

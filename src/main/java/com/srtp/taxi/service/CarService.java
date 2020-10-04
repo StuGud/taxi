@@ -12,7 +12,7 @@ public interface CarService {
      * 车辆注册
      * @param car
      */
-    public void registerCar(Car car);
+    public Car registerCar(long driverId,Car car);
 
     /**
      * 车辆中是否已存在车牌号

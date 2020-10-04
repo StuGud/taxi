@@ -1,38 +1,39 @@
-package com.srtp.taxi.controller;
+package com.srtp.taxi.restController;
 
-import com.srtp.taxi.entity.Driver;
 import com.srtp.taxi.entity.User;
 import com.srtp.taxi.service.UserService;
-import com.srtp.taxi.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
-    @Autowired
+    final
     UserService userService;
 
-    //PostMapping
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String loginUser(String username,String password){
-        User loginUser = userService.login(new User(null, username, password, null, null));
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping("/login")
+    public User loginUser(User user){
+        User loginUser = userService.login(user);
         if (loginUser==null){
             System.out.println("登录失败");
             return null;
         }else{
             System.out.println("登录成功");
-            return "pages/user/login_succeed";
+            //loginUser.setPassword("******");
+            return loginUser;
         }
     }
 
     @PostMapping("/register")
-    public String registerDriver(User user){
+    public User registerDriver(User user){
         System.out.println("保存的用户信息"+user);
-        userService.registerUser(user);
-        return "/pages/user/registerUser_succeed";
+        return userService.register(user);
     }
 }

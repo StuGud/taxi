@@ -18,8 +18,8 @@ public class DriverServiceImpl implements DriverService {
     DriverMapper driverMapper;
 
     @Override
-    public void registerDriver(Driver driver) {
-        driverMapper.saveDriver(driver);
+    public Driver register(Driver driver) {
+       return driverMapper.saveDriver(driver);
     }
 
     @Override

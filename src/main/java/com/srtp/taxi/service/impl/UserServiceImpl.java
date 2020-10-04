@@ -14,24 +14,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    final
     UserMapper userMapper;
 
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
+
     @Override
-    public void registerUser(User user) {
-        userMapper.saveUser(user);
+    public User register(User user) {
+        return userMapper.saveUser(user);
     }
 
     @Override
     public User login(User user) {
         return userMapper.queryUserByUsernameAndPassword(user.getUsername(),user.getPassword());
-    }
-
-    @Override
-    public boolean existsUsername(String username) {
-        if(userMapper.queryUserByUsername(username)==null){
-            return false;
-        }
-        return true;
     }
 }

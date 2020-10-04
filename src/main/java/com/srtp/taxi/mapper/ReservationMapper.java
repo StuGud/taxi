@@ -4,12 +4,14 @@ import com.srtp.taxi.entity.Reservation;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * Created by david.w on 2020/4/14.
  */
+@Component
 @Mapper
 public interface ReservationMapper {
     /**

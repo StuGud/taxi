@@ -13,7 +13,7 @@ public interface UserService {
      * 注册用户
      * @param user
      */
-    public void registerUser(User user);
+    public User register(User user);
 
     /**
      * 登录
@@ -21,11 +21,4 @@ public interface UserService {
      * @return
      */
     public User login(User user);
-
-    /**
-     * 是否已存在用户名
-     * @param username
-     * @return 返回true表示用户名已存在
-     */
-    public boolean existsUsername(String username);
 }
