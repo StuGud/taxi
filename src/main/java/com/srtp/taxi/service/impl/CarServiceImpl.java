@@ -21,10 +21,12 @@ public class CarServiceImpl implements CarService {
     DriverMapper driverMapper;
 
     @Override
-    public Car registerCar(long driverId,Car car) {
-        Car saveCar = carMapper.saveCar(car);
-        driverMapper.bindCar(driverId,saveCar.getId());
-        return saveCar;
+    public Car register(long driverId, Car car) {
+        if(carMapper.saveCar(car)){
+            driverMapper.bindCar(driverId,car.getId());
+            return car;
+        }
+        return null;
     }
 
     @Override

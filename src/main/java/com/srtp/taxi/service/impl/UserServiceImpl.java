@@ -23,7 +23,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User register(User user) {
-        return userMapper.saveUser(user);
+        if(userMapper.saveUser(user)){
+            return user;
+        }
+        return null;
     }
 
     @Override

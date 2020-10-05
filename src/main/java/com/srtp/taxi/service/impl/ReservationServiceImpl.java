@@ -18,7 +18,10 @@ public class ReservationServiceImpl implements ReservationService {
     ReservationMapper reservationMapper;
 
     @Override
-    public void reserve(Reservation reservation) {
-        reservationMapper.saveReservation(reservation);
+    public Reservation reserve(Reservation reservation) {
+        if(reservationMapper.saveReservation(reservation)){
+            return reservation;
+        }
+        return null;
     }
 }

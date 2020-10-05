@@ -4,6 +4,7 @@ package com.srtp.taxi.mapper;
 import com.srtp.taxi.entity.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +33,7 @@ public interface UserMapper {
      * @param user
      * @return 返回-1,操作失败
      */
-    @Insert("insert into t_user (username,password,phone,email) values (#{username},#{password},#{phone},#{email}")
-    User saveUser(User user);
+    @Insert("insert into t_user (username,password,phone) values (#{username},#{password},#{phone})")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    boolean saveUser(User user);
 }

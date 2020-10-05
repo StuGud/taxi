@@ -43,7 +43,7 @@ public class DriverController {
 
     @PostMapping("/{driverId}/registerCar")
     public Car registerCar(@PathVariable long driverId, Car car){
-        Car registerCar = carService.registerCar(driverId, car);
+        Car registerCar = carService.register(driverId, car);
         return registerCar;
     }
 }

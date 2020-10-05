@@ -12,5 +12,5 @@ public interface ReservationService {
      * 用户预约
      * @param reservation
      */
-    public void reserve(Reservation reservation);
+    Reservation reserve(Reservation reservation);
 }

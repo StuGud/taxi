@@ -19,19 +19,14 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver register(Driver driver) {
-       return driverMapper.saveDriver(driver);
+       if(driverMapper.saveDriver(driver)){
+           return driver;
+       }
+       return null;
     }
 
     @Override
     public Driver login(Driver driver) {
         return driverMapper.queryDriverByUsernameAndPassword(driver.getUsername(),driver.getPassword());
-    }
-
-    @Override
-    public boolean existsUsername(String username) {
-        if(driverMapper.queryDriverByUsername(username)==null){
-            return false;
-        }
-        return true;
     }
 }

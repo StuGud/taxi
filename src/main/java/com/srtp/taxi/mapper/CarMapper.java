@@ -4,6 +4,7 @@ package com.srtp.taxi.mapper;
 import com.srtp.taxi.entity.Car;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
@@ -19,13 +20,14 @@ public interface CarMapper {
      * @return  返回null,无此车辆
      */
     @Select("select * from t_car where plateNumber=#{plateNumber}")
-    public Car queryCarByPlateNumber(String plateNumber);
+    Car queryCarByPlateNumber(String plateNumber);
 
     /**
      * 保存车辆信息
      * @param car
-     * @return 返回-1,操作失败
+     * @return 返回null,操作失败
      */
-    @Insert("insert into t_car(plateNumber,brand,model,color) values (#{plateNumber},#{brand},#{model},#{color})")
-    public Car saveCar(Car car);
+    @Insert("insert into t_car(plateNumber,model,color) values (#{plateNumber},#{model},#{color})")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    boolean saveCar(Car car);
 }

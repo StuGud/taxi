@@ -2,10 +2,7 @@ package com.srtp.taxi.mapper;
 
 
 import com.srtp.taxi.entity.Driver;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -37,7 +34,8 @@ public interface DriverMapper {
      * @return 返回-1,操作失败
      */
     @Insert("insert into t_driver(username,password,phone,plateNumber) values(#{username},#{password},#{phone},#{plateNumber})")
-    Driver saveDriver(Driver driver);
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    boolean saveDriver(Driver driver);
 
     @Update("update t_driver set carId=#{carId} where id=#{driverId}")
     Driver bindCar(long driverId,long carId);
