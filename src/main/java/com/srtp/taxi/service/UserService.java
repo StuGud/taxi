@@ -13,12 +13,17 @@ public interface UserService {
      * 注册用户
      * @param user
      */
-    public User register(User user);
+    User register(User user);
 
     /**
      * 登录
      * @param user
      * @return
      */
-    public User login(User user);
+    User login(User user);
+
+    boolean existsUsername(String username);
+    boolean existsPhone(String phone);
+
+    User modify(User user);
 }

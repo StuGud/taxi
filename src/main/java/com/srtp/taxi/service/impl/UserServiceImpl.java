@@ -33,4 +33,28 @@ public class UserServiceImpl implements UserService {
     public User login(User user) {
         return userMapper.queryUserByUsernameAndPassword(user.getUsername(),user.getPassword());
     }
+
+    @Override
+    public boolean existsUsername(String username) {
+        if (userMapper.queryUserByUsername(username)==null){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean existsPhone(String phone) {
+        if (userMapper.queryUserByPhone(phone)==null){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public User modify(User user) {
+        if(userMapper.updateUser(user)){
+            return user;
+        }
+        return null;
+    }
 }
