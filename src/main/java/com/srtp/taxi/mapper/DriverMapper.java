@@ -36,7 +36,7 @@ public interface DriverMapper {
      * @param driver
      * @return 返回-1,操作失败
      */
-    @Insert("insert into t_driver(username,password,phone,plateNumber) values(#{username},#{password},#{phone},#{plateNumber})")
+    @Insert("insert into t_driver(username,password,phone) values(#{username},#{password},#{phone})")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     boolean saveDriver(Driver driver);
 
