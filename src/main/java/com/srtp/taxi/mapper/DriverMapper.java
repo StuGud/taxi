@@ -19,6 +19,9 @@ public interface DriverMapper {
     @Select("select * from t_driver where username=#{username}")
     Driver queryDriverByUsername(String username);
 
+    @Select("select * from t_driver where phone=#{phone}")
+    Driver queryDriverByPhone(String phone);
+
     /**
      * 根据用户名密码查询司机信息
      * @param username
@@ -38,5 +41,8 @@ public interface DriverMapper {
     boolean saveDriver(Driver driver);
 
     @Update("update t_driver set carId=#{carId} where id=#{driverId}")
-    Driver bindCar(long driverId,long carId);
+    boolean bindCar(long driverId,long carId);
+
+    @Update("update t_driver set password=#{password},phone=#{phone} where id=#{id}")
+    boolean updateDriver(Driver driver);
 }

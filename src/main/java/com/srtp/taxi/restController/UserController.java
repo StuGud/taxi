@@ -57,7 +57,7 @@ public class UserController {
                 }
                 loginUser.setPhone(newPhone);
             }
-            User modifiedUser= userService.modify(user);
+            User modifiedUser= userService.modify(loginUser);
             if(modifiedUser==null){
                 return "修改失败";
             }else{

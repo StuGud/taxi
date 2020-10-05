@@ -29,4 +29,28 @@ public class DriverServiceImpl implements DriverService {
     public Driver login(Driver driver) {
         return driverMapper.queryDriverByUsernameAndPassword(driver.getUsername(),driver.getPassword());
     }
+
+    @Override
+    public boolean existsUsername(String username) {
+        if (driverMapper.queryDriverByUsername(username)==null){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean existsPhone(String phone) {
+        if (driverMapper.queryDriverByPhone(phone)==null){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public Driver modify(Driver driver) {
+        if(driverMapper.updateDriver(driver)){
+            return driver;
+        }
+        return null;
+    }
 }

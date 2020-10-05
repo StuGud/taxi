@@ -21,4 +21,9 @@ public interface DriverService {
      * @return
      */
     Driver login(Driver driver);
+
+    boolean existsUsername(String username);
+    boolean existsPhone(String phone);
+
+    Driver modify(Driver driver);
 }
