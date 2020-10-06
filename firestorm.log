@@ -331,3 +331,8 @@ DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed

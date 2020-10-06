@@ -3,14 +3,15 @@ package com.srtp.taxi.service;
 
 import com.srtp.taxi.entity.Reservation;
 
+import java.util.List;
+
 /**
  * Created by david.w on 2020/4/14.
  */
 
 public interface ReservationService {
-    /**
-     * 用户预约
-     * @param reservation
-     */
     Reservation reserve(Reservation reservation);
+    boolean cancel(long reservationId);
+    Reservation setIsDispatched(long reservationId,boolean isDispatched);
+    List<Reservation> listReservationByUserId(long userId);
 }
