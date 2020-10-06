@@ -7,8 +7,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class Dispatcher {
-    private long id;
+public class Dispatch {
     private long driverId;
-    private List<Long> reservationIdList;
+    private List<ReservationDispatched> reservationList;
 }

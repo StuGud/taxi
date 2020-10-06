@@ -36,16 +36,11 @@ create table  if not exists t_reservation
     isDispatched boolean not null
 );
 
-create table  if not exists t_dispatcher
+create table  if not exists t_dispatch
 (
     id bigint not null auto_increment primary key ,
     driverId bigint not null ,
-    node1 bigint not null ,
-    node2 bigint not null ,
-    node3 bigint not null ,
-    node4 bigint not null ,
-    node5 bigint not null ,
-    node6 bigint not null
+    reservationId bigint
 );
 
 create table  if not exists t_order
@@ -68,20 +63,10 @@ alter table t_driver
 alter table t_reservation
     add foreign key (userId) references t_user(id);
 
-alter table t_dispatcher
+alter table t_dispatch
     add foreign key (driverId) references t_driver(id);
-alter table t_dispatcher
-    add foreign key (node1) references t_reservation(id);
-alter table t_dispatcher
-    add foreign key (node2) references t_reservation(id);
-alter table t_dispatcher
-    add foreign key (node3) references t_reservation(id);
-alter table t_dispatcher
-    add foreign key (node4) references t_reservation(id);
-alter table t_dispatcher
-    add foreign key (node5) references t_reservation(id);
-alter table t_dispatcher
-    add foreign key (node6) references t_reservation(id);
+alter table t_dispatch
+    add foreign key (reservationId) references t_reservation(id);
 
 alter table t_order
     add foreign key (userId) references t_user(id);
