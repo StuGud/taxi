@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Comparator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
@@ -21,6 +23,7 @@ class DispatchMapperTest {
     void findDispatchByDriverId() {
         Dispatch dispatchByDriverId = dispatchMapper.findDispatchByDriverId(1);
         System.out.println(dispatchByDriverId);
+        dispatchByDriverId.getReservationList().sort(Comparator.comparing(ReservationDispatched::getDispatchId));
         for (ReservationDispatched reservationDispatched:dispatchByDriverId.getReservationList()){
             System.out.println(reservationDispatched);
         }

@@ -17,7 +17,7 @@ public class DispatchServiceImpl implements DispatchService {
     DispatchMapper dispatchMapper;
 
     @Override
-    public Dispatch getDispatchByDriverId(long driverId) {
+    public Dispatch findDispatchByDriverId(long driverId) {
         Dispatch dispatch = dispatchMapper.findDispatchByDriverId(driverId);
         if(dispatch!=null&&!dispatch.getReservationList().isEmpty()){
             dispatch.getReservationList().sort(Comparator.comparing(ReservationDispatched::getDispatchId));

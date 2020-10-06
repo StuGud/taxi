@@ -9,5 +9,5 @@ public interface DispatchService {
      * @param driverId
      * @return
      */
-    Dispatch getDispatchByDriverId(long driverId);
+    Dispatch findDispatchByDriverId(long driverId);
 }

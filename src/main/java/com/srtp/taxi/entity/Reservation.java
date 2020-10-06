@@ -21,4 +21,15 @@ public class Reservation {
     //乘客数
     private int num;
     private boolean isDispatched;
+
+    /**
+     * 完成时间finishedAt自动设为当前时间
+     * @param driverId
+     * @return
+     */
+    public Order convertToOrder(long driverId){
+        Date finishedAt=new Date();
+        Order order=new Order(userId,driverId,start_lng,start_lat,end_lng,end_lat,startAt,finishedAt,num);
+        return order;
+    }
 }

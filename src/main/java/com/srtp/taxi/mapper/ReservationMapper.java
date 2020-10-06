@@ -23,6 +23,8 @@ public interface ReservationMapper {
     @Update("update t_reservation set isDispatched=#{isDispatched} where id=#{reservationId}")
     boolean setIsDispatched(long reservationId,boolean isDispatched);
 
+    @Select("select * from t_reservation where id=#{reservationId}")
+    Reservation queryReservationById(long reservationId);
 
     @Select("select * from t_reservation where userId=#{userId}")
     List<Reservation> queryReservationByUserId(long userId);

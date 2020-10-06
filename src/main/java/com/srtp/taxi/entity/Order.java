@@ -23,4 +23,16 @@ public class Order {
     private Date finishedAt;
     //乘客数
     private int num;
+
+    public Order(long userId, long driverId, double start_lng, double start_lat, double end_lng, double end_lat, Date startAt, Date finishedAt, int num) {
+        this.userId = userId;
+        this.driverId = driverId;
+        this.start_lng = start_lng;
+        this.start_lat = start_lat;
+        this.end_lng = end_lng;
+        this.end_lat = end_lat;
+        this.startAt = startAt;
+        this.finishedAt = finishedAt;
+        this.num = num;
+    }
 }
