@@ -2,10 +2,15 @@ package com.srtp.taxi.restController;
 
 import com.srtp.taxi.entity.User;
 import com.srtp.taxi.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(tags="用户相关文档")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -16,6 +21,8 @@ public class UserController {
         this.userService = userService;
     }
 
+
+    @ApiOperation("用户登录")
     @PostMapping("/login")
     public User login(User user){
         User loginUser = userService.login(user);
@@ -29,6 +36,7 @@ public class UserController {
         }
     }
 
+    @ApiOperation("用户注册")
     @PostMapping("/register")
     public Object register(User user){
         if(userService.existsUsername(user.getUsername())){
@@ -41,6 +49,11 @@ public class UserController {
         }
     }
 
+    @ApiOperation("用户修改")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="newPassword",dataType="String",value = "新的密码"),
+            @ApiImplicitParam(name="newPhone",dataType="String",value = "新的手机号")
+    })
     @PostMapping("/modify")
     public Object modify(User user,String newPassword,String newPhone){
         User loginUser = userService.login(user);

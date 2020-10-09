@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface ReservationMapper {
 
-    @Insert("insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,date,num,isDispatched) values (#{userId},#{start_log},#{start_lat},#{end_lng},#{end_lat},#{date},#{num},#{isDispatched})")
+    @Insert("insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (#{userId},#{start_lng},#{start_lat},#{end_lng},#{end_lat},#{startAt},#{num},#{isDispatched})")
     @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     boolean saveReservation(Reservation reservation);
 

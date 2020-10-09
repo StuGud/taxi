@@ -18,6 +18,7 @@ public class CarServiceImpl implements CarService {
     @Autowired
     CarMapper carMapper;
 
+    @Autowired
     DriverMapper driverMapper;
 
     @Override
