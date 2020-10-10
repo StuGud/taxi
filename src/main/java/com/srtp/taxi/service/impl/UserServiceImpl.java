@@ -7,6 +7,8 @@ import com.srtp.taxi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by david.w on 2020/4/7.
  */
@@ -56,5 +58,10 @@ public class UserServiceImpl implements UserService {
             return user;
         }
         return null;
+    }
+
+    @Override
+    public List<User> listAll() {
+        return userMapper.queryAllUser();
     }
 }

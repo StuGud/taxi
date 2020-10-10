@@ -5,6 +5,8 @@ import com.srtp.taxi.entity.Driver;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * Created by david.w on 2020/4/14.
  */
@@ -30,6 +32,9 @@ public interface DriverMapper {
      */
     @Select("select * from t_driver where username=#{username} and password=#{password}")
     Driver queryDriverByUsernameAndPassword(String username, String password);
+
+    @Select("select * from t_driver")
+    List<Driver> queryAllDriver();
 
     /**
      * 保存司机信息

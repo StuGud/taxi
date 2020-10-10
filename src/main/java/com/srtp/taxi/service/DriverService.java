@@ -4,6 +4,8 @@ package com.srtp.taxi.service;
 import com.srtp.taxi.entity.Car;
 import com.srtp.taxi.entity.Driver;
 
+import java.util.List;
+
 /**
  * Created by david.w on 2020/4/14.
  */
@@ -26,4 +28,6 @@ public interface DriverService {
     boolean existsPhone(String phone);
 
     Driver modify(Driver driver);
+
+    List<Driver> listAll();
 }

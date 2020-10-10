@@ -14,4 +14,6 @@ public interface ReservationService {
     boolean cancel(long reservationId);
     Reservation setIsDispatched(long reservationId,boolean isDispatched);
     List<Reservation> listReservationByUserId(long userId);
+    List<Reservation> listAll();
+    List<Reservation> listAllNotDispatched();
 }

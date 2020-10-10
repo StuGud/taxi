@@ -3,6 +3,8 @@ package com.srtp.taxi.service;
 
 import com.srtp.taxi.entity.User;
 
+import java.util.List;
+
 /**
  * Created by david.w on 2020/4/7.
  */
@@ -26,4 +28,6 @@ public interface UserService {
     boolean existsPhone(String phone);
 
     User modify(User user);
+
+    List<User> listAll();
 }

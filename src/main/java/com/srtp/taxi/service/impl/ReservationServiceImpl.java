@@ -9,10 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by david.w on 2020/4/14.
- */
-
 @Service
 public class ReservationServiceImpl implements ReservationService {
 
@@ -44,5 +40,15 @@ public class ReservationServiceImpl implements ReservationService {
             return reservations;
         }
         return null;
+    }
+
+    @Override
+    public List<Reservation> listAll() {
+        return reservationMapper.queryAllReservation();
+    }
+
+    @Override
+    public List<Reservation> listAllNotDispatched() {
+        return reservationMapper.queryReservationByIsDispatched(false);
     }
 }
