@@ -6,7 +6,14 @@ import java.util.List;
 
 import com.srtp.taxi.entity.*;
 import com.srtp.taxi.service.*;
+import com.srtp.taxi.service.impl.DispatchServiceImpl;
+import com.srtp.taxi.service.impl.DriverServiceImpl;
+import com.srtp.taxi.service.impl.ReservationServiceImpl;
+
 public class analyse {
+    public static DispatchService dispatchService=new DispatchServiceImpl();
+    public static ReservationService reservationService=new ReservationServiceImpl();
+    public static DriverService driverService=new DriverServiceImpl();
     public static void execute(){
         int time = 0;//time需要初始化
         HashMap<Long,Integer> ordernumMap=new HashMap<Long,Integer>();
@@ -14,8 +21,8 @@ public class analyse {
         ArrayList<driverSelect> alldriver = new ArrayList<driverSelect>();
         ArrayList<driverSelect> tempdriver = new ArrayList<driverSelect>();
 //        访问数据库初始化以上变量
-        List<Reservation> listofReservation=findAllOrders();
-        List<Driver> listofDriver=findAllDrivers();
+        List<Reservation> listofReservation=reservationService.listAllNotDispatched();
+        List<Driver> listofDriver=driverService.listAll();
 
         for(Reservation r : listofReservation){
             unselectorder.add(new order(r));
@@ -40,7 +47,17 @@ public class analyse {
         }
         //向数据库中写入所有司机的所有（按顺序）的乘客ID，路线（节点位置）信息
         for(driverSelect ds:alldriver) {
-            updateRouteByDriverID(ds.getDriver().getId(), ds.getRoutefordb());
+            Dispatch dispatch=new Dispatch();
+            dispatch.setDriverId(ds.getDriver().getId());
+            List<ReservationDispatched> reservationList=new ArrayList<ReservationDispatched>();
+            for(Long id:ds.getRoutefordb()){
+                ReservationDispatched reservationDispatched=new ReservationDispatched();
+                reservationDispatched.setId(id);
+                reservationList.add(reservationDispatched);
+            }
+
+            dispatch.setReservationList(reservationList);
+            dispatchService.saveDispatch(dispatch);
         }
     }
 }
