@@ -10,4 +10,5 @@ public interface DispatchService {
      * @return
      */
     Dispatch findDispatchByDriverId(long driverId);
+    Dispatch saveDispatch(Dispatch dispatch);
 }

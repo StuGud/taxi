@@ -1,6 +1,7 @@
 package com.srtp.taxi.service.impl;
 
 import com.srtp.taxi.entity.Dispatch;
+import com.srtp.taxi.entity.Reservation;
 import com.srtp.taxi.entity.ReservationDispatched;
 import com.srtp.taxi.mapper.DispatchMapper;
 import com.srtp.taxi.service.DispatchService;
@@ -26,4 +27,11 @@ public class DispatchServiceImpl implements DispatchService {
         return null;
     }
 
+    @Override
+    public Dispatch saveDispatch(Dispatch dispatch) {
+        for (ReservationDispatched reservation:dispatch.getReservationList()){
+            dispatchMapper.saveDispatch(dispatch.getDriverId(), reservation.getId());
+        }
+        return dispatch;
+    }
 }

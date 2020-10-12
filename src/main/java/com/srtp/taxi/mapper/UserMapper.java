@@ -5,6 +5,8 @@ import com.srtp.taxi.entity.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Mapper
 public interface UserMapper {
@@ -39,4 +41,7 @@ public interface UserMapper {
 
     @Update("update t_user set password=#{password},phone=#{phone} where id=#{id}")
     boolean updateUser(User user);
+
+    @Select("select * from t_user")
+    List<User> queryAllUser();
 }

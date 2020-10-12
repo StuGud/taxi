@@ -7,6 +7,8 @@ import com.srtp.taxi.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by david.w on 2020/4/14.
  */
@@ -52,5 +54,10 @@ public class DriverServiceImpl implements DriverService {
             return driver;
         }
         return null;
+    }
+
+    @Override
+    public List<Driver> listAll() {
+        return driverMapper.queryAllDriver();
     }
 }
