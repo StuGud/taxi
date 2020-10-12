@@ -75,8 +75,7 @@ public class driverSelect {
                 route.add(selectorder.getPos1());
                 routefordb.add(selectorder.getOrderID());
 
-                //向数据库中更新数据
-                updateDriverIDByID(selectorder.getOrderID(), driver.getId());
+
                 //从unselectorder中删除
                 unselectorder.remove(selectorder);
 
@@ -131,7 +130,6 @@ public class driverSelect {
                 route.add(selectorder.getPos1());
                 routefordb.add(selectorder.getOrderID());
                 //向数据库中更新数据,乘客所乘坐的车辆车牌号和预计到达时间
-                updateDriverIDByID(selectorder.getOrderID(), driver.getId());
                 //从unselectorder中删除
                 unselectorder.remove(selectorder);
 

@@ -1,6 +1,7 @@
 package com.srtp.taxi.algorithm;
 
 import com.srtp.taxi.entity.Order;
+import com.srtp.taxi.entity.Reservation;
 
 public class order {
     private long orderID;
@@ -12,10 +13,9 @@ public class order {
     private int passagerNum;
     private position pos1;
     private position pos2;
-    public order(Order o) {
+    public order(Reservation o) {
         orderID=o.getId();
         passagerID=o.getUserId();
-        carID=o.getDriverId();
         Time=Integer.parseInt(String.valueOf(o.getStartAt().getTime()).substring(0, 10));
         passagerNum=o.getNum();
         pos1=new position(o.getStart_lng(),o.getStart_lat());

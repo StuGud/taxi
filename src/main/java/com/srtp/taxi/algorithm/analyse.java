@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.srtp.taxi.entity.*;
+import com.srtp.taxi.service.*;
 public class analyse {
     public static void execute(){
         int time = 0;//time需要初始化
@@ -13,12 +14,12 @@ public class analyse {
         ArrayList<driverSelect> alldriver = new ArrayList<driverSelect>();
         ArrayList<driverSelect> tempdriver = new ArrayList<driverSelect>();
 //        访问数据库初始化以上变量
-        List<Order> listofOrder=findAllOrders();
+        List<Reservation> listofReservation=findAllOrders();
         List<Driver> listofDriver=findAllDrivers();
 
-        for(Order o : listofOrder){
-            unselectorder.add(new order(o));
-            ordernumMap.put(o.getId(),o.getNum());
+        for(Reservation r : listofReservation){
+            unselectorder.add(new order(r));
+            ordernumMap.put(r.getId(),r.getNum());
         }
         for(Driver d : listofDriver){
             alldriver.add(new driverSelect(d));
