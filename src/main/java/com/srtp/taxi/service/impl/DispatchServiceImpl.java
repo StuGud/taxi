@@ -4,6 +4,7 @@ import com.srtp.taxi.entity.Dispatch;
 import com.srtp.taxi.entity.Reservation;
 import com.srtp.taxi.entity.ReservationDispatched;
 import com.srtp.taxi.mapper.DispatchMapper;
+import com.srtp.taxi.mapper.ReservationMapper;
 import com.srtp.taxi.service.DispatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import java.util.Comparator;
 @Service
 public class DispatchServiceImpl implements DispatchService {
 
+    @Autowired
+    ReservationMapper reservationMapper;
     @Autowired
     DispatchMapper dispatchMapper;
 
@@ -30,6 +33,7 @@ public class DispatchServiceImpl implements DispatchService {
     @Override
     public Dispatch saveDispatch(Dispatch dispatch) {
         for (ReservationDispatched reservation:dispatch.getReservationList()){
+            reservationMapper.setIsDispatched(reservation.getId(), true);
             dispatchMapper.saveDispatch(dispatch.getDriverId(), reservation.getId());
         }
         return dispatch;

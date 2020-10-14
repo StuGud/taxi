@@ -32,6 +32,18 @@ public class Reservation {
     @ApiModelProperty(value = "预约是否被接受")
     private boolean isDispatched;
 
+
+    public Reservation(long userId, double start_lng, double start_lat, double end_lng, double end_lat, Date startAt, int num) {
+        this.userId = userId;
+        this.start_lng = start_lng;
+        this.start_lat = start_lat;
+        this.end_lng = end_lng;
+        this.end_lat = end_lat;
+        this.startAt = startAt;
+        this.num = num;
+        this.isDispatched = false;
+    }
+
     /**
      * 完成时间finishedAt自动设为当前时间
      * @param driverId
