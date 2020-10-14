@@ -3,12 +3,14 @@ package com.srtp.taxi.algorithm;
 import com.srtp.taxi.entity.Order;
 import com.srtp.taxi.entity.Reservation;
 
+import java.util.Calendar;
+
 public class order {
     private long orderID;
     private long passagerID;
     private long carID;
     //出发时间
-    private int Time;
+    private long Time;
     //乘客数
     private int passagerNum;
     private position pos1;
@@ -16,7 +18,12 @@ public class order {
     public order(Reservation o) {
         orderID=o.getId();
         passagerID=o.getUserId();
-        Time=Integer.parseInt(String.valueOf(o.getStartAt().getTime()).substring(0, 10));
+        //用calender函数
+        Calendar c = Calendar.getInstance();
+        //用Order的Date.get……赋值；
+        c.set(0, Calendar.JANUARY,0,o.getStartAt().getHours(),o.getStartAt().getMinutes(),0);
+        Time=c.getTimeInMillis()/1000/60;
+//        Time=Integer.parseInt(String.valueOf(o.getStartAt().getTime()).substring(0, 10));
         passagerNum=o.getNum();
         pos1=new position(o.getStart_lng(),o.getStart_lat());
         pos2=new position(o.getEnd_lng(),o.getEnd_lat());
@@ -46,7 +53,7 @@ public class order {
         this.carID = carID;
     }
 
-    public int getTime() {
+    public long getTime() {
         return Time;
     }
 
