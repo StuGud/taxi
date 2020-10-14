@@ -3,6 +3,7 @@ package com.srtp.taxi.service;
 
 import com.srtp.taxi.entity.Car;
 import com.srtp.taxi.entity.Driver;
+import com.srtp.taxi.entity.OnlineDriver;
 
 import java.util.List;
 
@@ -30,4 +31,8 @@ public interface DriverService {
     Driver modify(Driver driver);
 
     List<Driver> listAll();
+    Driver findDriverById(long id);
+    List<OnlineDriver> listAllOnline();
+    OnlineDriver findOnlineDriverById(long id);
+
 }

@@ -62,5 +62,8 @@ class ReservationMapperTest {
     @Test
     void test(){
         System.out.println(reservationMapper.queryReservationNotDispatchedByInterval8());
+        System.out.println("==============");
+        System.out.println(reservationMapper.queryReservationByIsDispatched(false).size());
+        System.out.println(reservationMapper.queryReservationByIsDispatched(false));
     }
 }

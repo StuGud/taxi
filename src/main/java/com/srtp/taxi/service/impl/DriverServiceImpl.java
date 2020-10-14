@@ -2,6 +2,7 @@ package com.srtp.taxi.service.impl;
 
 
 import com.srtp.taxi.entity.Driver;
+import com.srtp.taxi.entity.OnlineDriver;
 import com.srtp.taxi.mapper.DriverMapper;
 import com.srtp.taxi.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,20 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public List<Driver> listAll() {
         return driverMapper.queryAllDriver();
+    }
+
+    @Override
+    public Driver findDriverById(long id) {
+        return driverMapper.queryDriverById(id);
+    }
+
+    @Override
+    public List<OnlineDriver> listAllOnline() {
+        return driverMapper.queryAllOnlineDriver();
+    }
+
+    @Override
+    public OnlineDriver findOnlineDriverById(long id) {
+        return driverMapper.queryOnlineDriverById(id);
     }
 }

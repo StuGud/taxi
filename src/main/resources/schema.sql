@@ -36,14 +36,14 @@ create table  if not exists t_reservation
     isDispatched boolean not null
 );
 
-create table  if not exists t_dispatch
+create table if not exists t_dispatch
 (
     id bigint not null auto_increment primary key ,
     driverId bigint not null ,
     reservationId bigint
 );
 
-create table  if not exists t_order
+create table if not exists t_order
 (
     id bigint not null auto_increment primary key ,
     userId bigint not null ,
@@ -56,6 +56,16 @@ create table  if not exists t_order
     finishedAt datetime not null ,
     num int not null
 );
+
+create table if not exists t_online_driver
+(
+    id bigint not null primary key ,
+    lng double not null,
+    lat double not null
+);
+
+alter table t_online_driver
+    add foreign key (id) references t_driver(id);
 
 alter table t_driver
     add foreign key (carId) references t_car(id);

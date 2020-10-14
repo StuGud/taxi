@@ -66,6 +66,7 @@ public class analyse {
             for (driverSelect driver : tempdriver) {
                 driver.select(unselectorder,ordernumMap,time);
             }
+            System.out.println(time);
             time+=60;
         }
         //向数据库中写入所有司机的所有（按顺序）的乘客ID，路线（节点位置）信息
