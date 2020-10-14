@@ -841,3 +841,1262 @@ DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-8} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-9} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-10} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-11} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-12} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+ERROR scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} execute error. select * from t_reservation where isDispatched=?
+java.sql.SQLSyntaxErrorException: Table 'pooling.t_reservation' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy73.queryReservationByIsDispatched(Unknown Source)
+	at com.srtp.taxi.service.impl.ReservationServiceImpl.listAllNotDispatched(ReservationServiceImpl.java:52)
+	at com.srtp.taxi.algorithm.analyse.execute(analyse.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10004} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10003} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10002} closed
+DEBUG Druid-ConnectionPool-Create-105860882 druid.sql.Connection - {conn-10006,procId-15} connected
+DEBUG scheduling-1 druid.sql.Connection - {conn-10001} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10006, pstmt-20001} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10006, pstmt-20001} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10006, pstmt-20001} Types : [BOOLEAN]
+ERROR scheduling-1 druid.sql.Statement - {conn-10006, pstmt-20001} execute error. select * from t_reservation where isDispatched=?
+java.sql.SQLSyntaxErrorException: Table 'pooling.t_reservation' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy73.queryReservationByIsDispatched(Unknown Source)
+	at com.srtp.taxi.service.impl.ReservationServiceImpl.listAllNotDispatched(ReservationServiceImpl.java:52)
+	at com.srtp.taxi.algorithm.analyse.execute(analyse.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG scheduling-1 druid.sql.Statement - {conn-10006, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Statement - {conn-10006, pstmt-20001} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG Druid-ConnectionPool-Create-105860882 druid.sql.Connection - {conn-10007,procId-16} connected
+DEBUG scheduling-1 druid.sql.Connection - {conn-10007} closed
+DEBUG scheduling-1 druid.sql.Connection - {conn-10006} closed
+DEBUG Druid-ConnectionPool-Create-105860882 druid.sql.Connection - {conn-10008,procId-34} connected
+DEBUG scheduling-1 druid.sql.Connection - {conn-10008} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20002} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20002} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20002} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20002} executed. 17.0103 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50000} Header: [userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20002} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10008} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10008} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20003} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20003} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20003} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20003} executed. 12.9143 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50001} Header: [id, username, phone, password, carId, driverId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10008, pstmt-20003} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10008} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10008} closed
+DEBUG Druid-ConnectionPool-Create-105860882 druid.sql.Connection - {conn-10009,procId-56} connected
+DEBUG scheduling-1 druid.sql.Connection - {conn-10009} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20004} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20004} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20004} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20004} executed. 13.959 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50002} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50002} Header: [userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50002} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20004} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10009} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10009} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20005} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20005} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20005} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20005} executed. 12.2039 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10009, pstmt-20005, rs-50003} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10009, pstmt-20005, rs-50003} Header: [id, username, phone, password, carId, driverId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10009, pstmt-20005, rs-50003} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10009, pstmt-20005} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10009} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001,procId-57} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-58} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-59} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-60} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-61} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001} closed
+DEBUG main druid.sql.Connection - {conn-10002} closed
+DEBUG main druid.sql.Connection - {conn-10003} closed
+DEBUG main druid.sql.Connection - {conn-10004} closed
+DEBUG main druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-62} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-63} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-64} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-65} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-66} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 19.3204 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 12.5098 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, phone, password, carId, driverId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001,procId-67} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-68} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-69} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-70} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-71} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 20.9473 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 12.4899 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, phone, password, carId, driverId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10005} closed
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10004} closed
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10003} closed
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10002} closed
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10001} closed
+DEBUG Druid-ConnectionPool-Create-578362229 druid.sql.Connection - {conn-10006,procId-72} connected
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} created. select * from t_user where username=?
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} Parameters : [aaa]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} Types : [VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} executed. 14.3825 millis. select * from t_user where username=?
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50002} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50002} Header: [id, username, phone, password]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50002} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} created. select * from t_user where phone=?
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} Parameters : [1234567890]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} executed. 12.7257 millis. select * from t_user where phone=?
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50003} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50003} Header: [id, username, phone, password]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50003} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} created. insert into t_user (username,password,phone) values (?,?,?)
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} Parameters : [aaa, aaa, 1234567890]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} Types : [VARCHAR, VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} executed. 252.2612 millis. insert into t_user (username,password,phone) values (?,?,?)
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} Result: [1]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-7 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10006, pstmt-20005} created. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10006, pstmt-20005} Parameters : [aaa, aaa]
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10006, pstmt-20005} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10006, pstmt-20005} executed. 12.8163 millis. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} open
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} Header: [id, username, phone, password]
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} Result: [1, aaa, 1234567890, aaa]
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} closed
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10006, pstmt-20005} clearParameters. 
+DEBUG http-nio-250-exec-7 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-8 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20006} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20006} Parameters : [1, 120.274549117, 31.90964815, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20006} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20006} executed. 28.1471 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} open
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} closed
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20006} clearParameters. 
+DEBUG http-nio-250-exec-8 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10006} closed
+DEBUG Druid-ConnectionPool-Create-578362229 druid.sql.Connection - {conn-10007,procId-73} connected
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10007, pstmt-20007} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10007, pstmt-20007} Parameters : [1, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10007, pstmt-20007} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+ERROR http-nio-250-exec-10 druid.sql.Statement - {conn-10007, pstmt-20007} execute error. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy73.saveReservation(Unknown Source)
+	at com.srtp.taxi.service.impl.ReservationServiceImpl.reserve(ReservationServiceImpl.java:20)
+	at com.srtp.taxi.restController.ReservationController.reserve(ReservationController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10007, pstmt-20007} clearParameters. 
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10007, pstmt-20007} closed
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} Parameters : [1, 118.776246124, 32.074818248, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+ERROR http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} execute error. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy73.saveReservation(Unknown Source)
+	at com.srtp.taxi.service.impl.ReservationServiceImpl.reserve(ReservationServiceImpl.java:20)
+	at com.srtp.taxi.restController.ReservationController.reserve(ReservationController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} closed
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-2 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10007, pstmt-20009} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10007, pstmt-20009} Parameters : [1, 118.776246124, 32.074818248, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10007, pstmt-20009} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+ERROR http-nio-250-exec-2 druid.sql.Statement - {conn-10007, pstmt-20009} execute error. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy73.saveReservation(Unknown Source)
+	at com.srtp.taxi.service.impl.ReservationServiceImpl.reserve(ReservationServiceImpl.java:20)
+	at com.srtp.taxi.restController.ReservationController.reserve(ReservationController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10007, pstmt-20009} clearParameters. 
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10007, pstmt-20009} closed
+DEBUG http-nio-250-exec-2 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-3 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} Parameters : [1, 118.776246124, 32.074818248, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+ERROR http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} execute error. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy73.saveReservation(Unknown Source)
+	at com.srtp.taxi.service.impl.ReservationServiceImpl.reserve(ReservationServiceImpl.java:20)
+	at com.srtp.taxi.restController.ReservationController.reserve(ReservationController.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} clearParameters. 
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} closed
+DEBUG http-nio-250-exec-3 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001,procId-74} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-75} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-76} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-77} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-78} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 20.0953 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 120.274549117, 31.90964815, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, 0]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 12.5119 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, phone, password, carId, driverId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10009} closed
+DEBUG Druid-ConnectionPool-Create-105860882 druid.sql.Connection - {conn-10010,procId-79} connected
+DEBUG scheduling-1 druid.sql.Connection - {conn-10010} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20006} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20006} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20006} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20006} executed. 12.2404 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20006, rs-50004} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20006, rs-50004} Header: [userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20006, rs-50004} Result: [1, 120.274549117, 31.90964815, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, 0]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20006, rs-50004} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20006} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10010} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10010} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20007} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20007} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20007} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20007} executed. 12.4841 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20007, rs-50005} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20007, rs-50005} Header: [id, username, phone, password, carId, driverId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10010, pstmt-20007, rs-50005} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10010, pstmt-20007} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10010} pool-recycle
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10005} closed
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10004} closed
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10003} closed
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10002} closed
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10001} closed
+DEBUG Druid-ConnectionPool-Create-890085657 druid.sql.Connection - {conn-10006,procId-84} connected
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20002} created. select * from t_user where username=?
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20002} Parameters : [111]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20002} Types : [VARCHAR]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20002} executed. 13.4992 millis. select * from t_user where username=?
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50002} open
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50002} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50002} closed
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20002} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20003} created. select * from t_user where phone=?
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20003} Parameters : [111]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20003} executed. 12.4134 millis. select * from t_user where phone=?
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50003} open
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50003} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50003} closed
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20003} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20004} created. insert into t_user (username,password,phone) values (?,?,?)
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20004} Parameters : [111, 111, 111]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20004} Types : [VARCHAR, VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20004} executed. 29.048 millis. insert into t_user (username,password,phone) values (?,?,?)
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} open
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} Result: [1]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50004} closed
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10006, pstmt-20004} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-2 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10006, pstmt-20005} created. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10006, pstmt-20005} Parameters : [111, 111]
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10006, pstmt-20005} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10006, pstmt-20005} executed. 13.1429 millis. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} open
+DEBUG http-nio-250-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} Result: [1, 111, 111, 111]
+DEBUG http-nio-250-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50005} closed
+DEBUG http-nio-250-exec-2 druid.sql.Statement - {conn-10006, pstmt-20005} clearParameters. 
+DEBUG http-nio-250-exec-2 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-4 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-4 druid.sql.Statement - {conn-10006, pstmt-20006} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-4 druid.sql.Statement - {conn-10006, pstmt-20006} Parameters : [1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-4 druid.sql.Statement - {conn-10006, pstmt-20006} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+DEBUG http-nio-250-exec-4 druid.sql.Statement - {conn-10006, pstmt-20006} executed. 29.9206 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} open
+DEBUG http-nio-250-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} Result: [1]
+DEBUG http-nio-250-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50006} closed
+DEBUG http-nio-250-exec-4 druid.sql.Statement - {conn-10006, pstmt-20006} clearParameters. 
+DEBUG http-nio-250-exec-4 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} Parameters : [222]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} Types : [VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} executed. 14.0758 millis. select * from t_user where username=?
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50007} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50007} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20002, rs-50007} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20002} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} Parameters : [222]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} Types : [VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} executed. 12.9292 millis. select * from t_user where phone=?
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50008} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50008} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20003, rs-50008} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20003} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} Parameters : [222, 222, 222]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} Types : [VARCHAR, VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} executed. 27.9183 millis. insert into t_user (username,password,phone) values (?,?,?)
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50009} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50009} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50009} Result: [2]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10006, pstmt-20004, rs-50009} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10006, pstmt-20004} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-8 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20005} Parameters : [222, 222]
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20005} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20005} executed. 13.8232 millis. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50010} open
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50010} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50010} Result: [2, 222, 222, 222]
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10006, pstmt-20005, rs-50010} closed
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10006, pstmt-20005} clearParameters. 
+DEBUG http-nio-250-exec-8 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG http-nio-250-exec-9 druid.sql.Connection - {conn-10006} pool-connect
+DEBUG http-nio-250-exec-9 druid.sql.Statement - {conn-10006, pstmt-20006} Parameters : [2, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-9 druid.sql.Statement - {conn-10006, pstmt-20006} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+DEBUG http-nio-250-exec-9 druid.sql.Statement - {conn-10006, pstmt-20006} executed. 30.3262 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-9 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50011} open
+DEBUG http-nio-250-exec-9 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50011} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-9 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50011} Result: [2]
+DEBUG http-nio-250-exec-9 druid.sql.ResultSet - {conn-10006, pstmt-20006, rs-50011} closed
+DEBUG http-nio-250-exec-9 druid.sql.Statement - {conn-10006, pstmt-20006} clearParameters. 
+DEBUG http-nio-250-exec-9 druid.sql.Connection - {conn-10006} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001,procId-127} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-128} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-129} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-130} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-131} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001} closed
+DEBUG main druid.sql.Connection - {conn-10002} closed
+DEBUG main druid.sql.Connection - {conn-10003} closed
+DEBUG main druid.sql.Connection - {conn-10004} closed
+DEBUG main druid.sql.Connection - {conn-10005} closed
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10006} closed
+DEBUG Druid-ConnectionPool-Create-890085657 druid.sql.Connection - {conn-10007,procId-132} connected
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20007} created. select * from t_driver where username=?
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20007} Parameters : [司机一]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20007} Types : [VARCHAR]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20007} executed. 14.452 millis. select * from t_driver where username=?
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20007, rs-50012} open
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20007, rs-50012} Header: [id, username, password, phone, carId]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20007, rs-50012} closed
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20007} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} created. select * from t_driver where phone=?
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} Parameters : [10086]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} Types : [VARCHAR]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} executed. 14.21 millis. select * from t_driver where phone=?
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20008, rs-50013} open
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20008, rs-50013} Header: [id, username, password, phone, carId]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20008, rs-50013} closed
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20008} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20009} created. insert into t_driver(username,password,phone) values(?,?,?)
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20009} Parameters : [司机一, 123456, 10086]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20009} Types : [VARCHAR, VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20009} executed. 27.1564 millis. insert into t_driver(username,password,phone) values(?,?,?)
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20009, rs-50014} open
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20009, rs-50014} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20009, rs-50014} Result: [1]
+DEBUG http-nio-250-exec-1 druid.sql.ResultSet - {conn-10007, pstmt-20009, rs-50014} closed
+DEBUG http-nio-250-exec-1 druid.sql.Statement - {conn-10007, pstmt-20009} clearParameters. 
+DEBUG http-nio-250-exec-1 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-3 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} created. select * from t_driver where username=? and password=?
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} Parameters : [司机一, 123456]
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} executed. 13.3917 millis. select * from t_driver where username=? and password=?
+DEBUG http-nio-250-exec-3 druid.sql.ResultSet - {conn-10007, pstmt-20010, rs-50015} open
+DEBUG http-nio-250-exec-3 druid.sql.ResultSet - {conn-10007, pstmt-20010, rs-50015} Header: [id, username, password, phone, carId]
+DEBUG http-nio-250-exec-3 druid.sql.ResultSet - {conn-10007, pstmt-20010, rs-50015} Result: [1, 司机一, 123456, 10086, null]
+DEBUG http-nio-250-exec-3 druid.sql.ResultSet - {conn-10007, pstmt-20010, rs-50015} closed
+DEBUG http-nio-250-exec-3 druid.sql.Statement - {conn-10007, pstmt-20010} clearParameters. 
+DEBUG http-nio-250-exec-3 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-5 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-5 druid.sql.Statement - {conn-10007, pstmt-20011} created. select * from t_car where plateNumber=?
+DEBUG http-nio-250-exec-5 druid.sql.Statement - {conn-10007, pstmt-20011} Parameters : [苏A123456]
+DEBUG http-nio-250-exec-5 druid.sql.Statement - {conn-10007, pstmt-20011} Types : [VARCHAR]
+ERROR http-nio-250-exec-5 druid.sql.Statement - {conn-10007, pstmt-20011} execute error. select * from t_car where plateNumber=?
+java.sql.SQLException: Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8mb4_general_ci,COERCIBLE) for operation '='
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3461)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:626)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3459)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at com.sun.proxy.$Proxy70.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:159)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy88.queryCarByPlateNumber(Unknown Source)
+	at com.srtp.taxi.service.impl.CarServiceImpl.existsPlateNumber(CarServiceImpl.java:35)
+	at com.srtp.taxi.restController.DriverController.registerCar(DriverController.java:98)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+DEBUG http-nio-250-exec-5 druid.sql.Statement - {conn-10007, pstmt-20011} clearParameters. 
+DEBUG http-nio-250-exec-5 druid.sql.Statement - {conn-10007, pstmt-20011} closed
+DEBUG http-nio-250-exec-5 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG http-nio-250-exec-5 druid.sql.Connection - {conn-10007} pool-connect
+DEBUG http-nio-250-exec-5 druid.sql.Connection - {conn-10007} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001,procId-133} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-134} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-135} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-136} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-137} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 31.015799 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24 00:00:00.0, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24 00:00:00.0, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 16.238701 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10007} closed
+DEBUG Druid-ConnectionPool-Create-890085657 druid.sql.Connection - {conn-10008,procId-153} connected
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10008} pool-connect
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10008, pstmt-20012} created. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10008, pstmt-20012} Parameters : [111, 111]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10008, pstmt-20012} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10008, pstmt-20012} executed. 13.4708 millis. select * from t_user where username=? and password=?
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20012, rs-50016} open
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20012, rs-50016} Header: [id, username, password, phone]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20012, rs-50016} Result: [1, 111, 111, 111]
+DEBUG http-nio-250-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20012, rs-50016} closed
+DEBUG http-nio-250-exec-6 druid.sql.Statement - {conn-10008, pstmt-20012} clearParameters. 
+DEBUG http-nio-250-exec-6 druid.sql.Connection - {conn-10008} pool-recycle
+DEBUG http-nio-250-exec-7 druid.sql.Connection - {conn-10008} pool-connect
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10008, pstmt-20013} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10008, pstmt-20013} Parameters : [1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10008, pstmt-20013} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10008, pstmt-20013} executed. 28.8984 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50017} open
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50017} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50017} Result: [3]
+DEBUG http-nio-250-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50017} closed
+DEBUG http-nio-250-exec-7 druid.sql.Statement - {conn-10008, pstmt-20013} clearParameters. 
+DEBUG http-nio-250-exec-7 druid.sql.Connection - {conn-10008} pool-recycle
+DEBUG http-nio-250-exec-8 druid.sql.Connection - {conn-10008} pool-connect
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10008, pstmt-20013} Parameters : [1, 118.776460727, 32.072021557, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10008, pstmt-20013} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10008, pstmt-20013} executed. 29.2045 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50018} open
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50018} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50018} Result: [4]
+DEBUG http-nio-250-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20013, rs-50018} closed
+DEBUG http-nio-250-exec-8 druid.sql.Statement - {conn-10008, pstmt-20013} clearParameters. 
+DEBUG http-nio-250-exec-8 druid.sql.Connection - {conn-10008} pool-recycle
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10008} closed
+DEBUG Druid-ConnectionPool-Create-890085657 druid.sql.Connection - {conn-10009,procId-154} connected
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10009} pool-connect
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10009, pstmt-20014} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10009, pstmt-20014} Parameters : [1, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24 19:57:00.0, 1, false]
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10009, pstmt-20014} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10009, pstmt-20014} executed. 27.707 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
+DEBUG http-nio-250-exec-10 druid.sql.ResultSet - {conn-10009, pstmt-20014, rs-50019} open
+DEBUG http-nio-250-exec-10 druid.sql.ResultSet - {conn-10009, pstmt-20014, rs-50019} Header: [GENERATED_KEY]
+DEBUG http-nio-250-exec-10 druid.sql.ResultSet - {conn-10009, pstmt-20014, rs-50019} Result: [5]
+DEBUG http-nio-250-exec-10 druid.sql.ResultSet - {conn-10009, pstmt-20014, rs-50019} closed
+DEBUG http-nio-250-exec-10 druid.sql.Statement - {conn-10009, pstmt-20014} clearParameters. 
+DEBUG http-nio-250-exec-10 druid.sql.Connection - {conn-10009} pool-recycle
