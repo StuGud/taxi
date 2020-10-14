@@ -1,6 +1,8 @@
 package com.srtp.taxi.algorithm;
 import com.srtp.taxi.entity.*;
 import com.srtp.taxi.service.*;
+import com.srtp.taxi.utils.RoadDetailUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -42,10 +44,10 @@ public class driverSelect {
     boolean isfull() { return maxnum <= nownum; }
     
     public static double getdistance(position p1,position p2){
-        return 1;
+        return RoadDetailUtils.getDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY());
     }
     public static int gettime(position p1,position p2){
-        return 1;
+        return RoadDetailUtils.getTime(p1.getX(),p1.getY(),p2.getX(),p2.getY());
     }
     //对于每辆车而言的选择算法，第一个参数是未分配的订单，后一个参数是当前时间
     void select(ArrayList<order> unselectorder, HashMap<Long,Integer> ordernumMap, int time) {
