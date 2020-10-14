@@ -26,7 +26,7 @@ class ReservationMapperTest {
     void saveReservation() throws ParseException {
 
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        String time = "20-10-14 5:00:00";
+        String time = "20-10-14 23:00:00";
         SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd H:m:s");
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date date = format.parse(time);
@@ -57,5 +57,13 @@ class ReservationMapperTest {
 
     @Test
     void queryReservationByIsDispatched() {
+    }
+
+    @Test
+    void test(){
+        System.out.println(reservationMapper.queryReservationNotDispatchedByInterval8());
+        System.out.println("==============");
+        System.out.println(reservationMapper.queryReservationByIsDispatched(false).size());
+        System.out.println(reservationMapper.queryReservationByIsDispatched(false));
     }
 }

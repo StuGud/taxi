@@ -1,690 +1,30 @@
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20004} Parameters : [ldq1, 111, 111]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20004} Types : [VARCHAR, VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20004} executed. 269.4367 millis. insert into t_user (username,password,phone) values (?,?,?)
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20004, rs-50004} open
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20004, rs-50004} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20004, rs-50004} Result: [11]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20004, rs-50004} closed
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20004} clearParameters. 
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10007} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10007} closed
-DEBUG Druid-ConnectionPool-Create-624475142 druid.sql.Connection - {conn-10008,procId-15} connected
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} created. select * from t_user where username=?
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} Parameters : [ldq1]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} executed. 1.603 millis. select * from t_user where username=?
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50005} open
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50005} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50005} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50005} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20005} Parameters : [ldq2]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20005} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20005} executed. 1.0277 millis. select * from t_user where username=?
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50006} open
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50006} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50006} closed
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20005} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20006} created. select * from t_user where phone=?
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20006} Parameters : [111]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20006} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20006} executed. 1.2993 millis. select * from t_user where phone=?
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50007} open
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50007} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50007} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50007} closed
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20006} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20007} created. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20007} Parameters : [ldq2]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20007} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20007} executed. 17.6672 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50008} open
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50008} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50008} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20008} created. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20008} Parameters : [111]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20008} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20008} executed. 0.7546 millis. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50009} open
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50009} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50009} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20008} clearParameters. 
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20009} created. insert into t_driver(username,password,phone) values(?,?,?)
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20009} Parameters : [ldq2, 111, 111]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20009} Types : [VARCHAR, VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20009} executed. 224.8069 millis. insert into t_driver(username,password,phone) values(?,?,?)
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20009, rs-50010} open
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20009, rs-50010} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20009, rs-50010} Result: [5]
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10008, pstmt-20009, rs-50010} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10008, pstmt-20009} clearParameters. 
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20005} Parameters : [ldq2]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20005} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20005} executed. 1.1159 millis. select * from t_user where username=?
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50011} open
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50011} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50011} closed
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20005} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20006} Parameters : [111]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20006} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20006} executed. 1.0313 millis. select * from t_user where phone=?
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50012} open
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50012} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50012} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50012} closed
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20006} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10008, pstmt-20007} Parameters : [ldq2]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10008, pstmt-20007} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10008, pstmt-20007} executed. 1.0736 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50013} open
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50013} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50013} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50013} closed
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10008, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10008, pstmt-20007} Parameters : [ldq2]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10008, pstmt-20007} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10008, pstmt-20007} executed. 0.88 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50014} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50014} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50014} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50014} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10008, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20007} Parameters : [ldq23]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20007} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20007} executed. 0.9577 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50015} open
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50015} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50015} closed
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20008} Parameters : [111]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20008} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20008} executed. 0.9269 millis. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50016} open
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50016} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50016} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50016} closed
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10008, pstmt-20008} clearParameters. 
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-9 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20007} Parameters : [ldq23]
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20007} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20007} executed. 0.9847 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50017} open
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50017} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50017} closed
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-9 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-9 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20008} Parameters : [111]
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20008} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20008} executed. 0.7948 millis. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50018} open
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50018} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50018} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50018} closed
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10008, pstmt-20008} clearParameters. 
-DEBUG http-nio-8080-exec-9 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20007} Parameters : [ldq23]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20007} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20007} executed. 0.9475 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50019} open
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50019} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20007, rs-50019} closed
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20008} Parameters : [111]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20008} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20008} executed. 1.8157 millis. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50020} open
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50020} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50020} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20008, rs-50020} closed
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20008} clearParameters. 
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10008, pstmt-20005} Parameters : [ldq1]
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10008, pstmt-20005} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10008, pstmt-20005} executed. 1.0686 millis. select * from t_user where username=?
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50021} open
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50021} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50021} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50021} closed
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10008, pstmt-20005} clearParameters. 
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} Parameters : [ldq13]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} executed. 0.7881 millis. select * from t_user where username=?
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50022} open
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50022} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20005, rs-50022} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20005} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20006} Parameters : [111]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20006} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20006} executed. 4.7072 millis. select * from t_user where phone=?
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50023} open
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50023} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50023} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20006, rs-50023} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20006} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20010} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20010} Parameters : [ldq1, 111]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20010} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20010} executed. 9.2181 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20010, rs-50024} open
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20010, rs-50024} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20010, rs-50024} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20010, rs-50024} closed
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20010} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} closed
-DEBUG Druid-ConnectionPool-Create-624475142 druid.sql.Connection - {conn-10009,procId-16} connected
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10009} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10009, pstmt-20011} created. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10009, pstmt-20011} Parameters : [ldq2, 111]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10009, pstmt-20011} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10009, pstmt-20011} executed. 1.9479 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10009, pstmt-20011, rs-50025} open
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10009, pstmt-20011, rs-50025} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10009, pstmt-20011, rs-50025} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10009, pstmt-20011, rs-50025} closed
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10009, pstmt-20011} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10009} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10009} closed
-DEBUG Druid-ConnectionPool-Create-624475142 druid.sql.Connection - {conn-10010,procId-17} connected
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10010} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10010, pstmt-20012} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10010, pstmt-20012} Parameters : [ldq2, qqqq]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10010, pstmt-20012} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10010, pstmt-20012} executed. 110.659 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50026} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50026} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50026} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10010, pstmt-20012} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10010} pool-recycle
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10010} pool-connect
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10010, pstmt-20012} Parameters : [ldq2q, qqqq]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10010, pstmt-20012} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10010, pstmt-20012} executed. 0.9812 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50027} open
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50027} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50027} closed
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10010, pstmt-20012} clearParameters. 
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10010} pool-recycle
-DEBUG http-nio-8080-exec-9 druid.sql.Connection - {conn-10010} pool-connect
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10010, pstmt-20012} Parameters : [ldq2, qqq]
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10010, pstmt-20012} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10010, pstmt-20012} executed. 0.9926 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50028} open
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50028} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-9 druid.sql.ResultSet - {conn-10010, pstmt-20012, rs-50028} closed
-DEBUG http-nio-8080-exec-9 druid.sql.Statement - {conn-10010, pstmt-20012} clearParameters. 
-DEBUG http-nio-8080-exec-9 druid.sql.Connection - {conn-10010} pool-recycle
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10010} pool-connect
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10010, pstmt-20013} created. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10010, pstmt-20013} Parameters : [ldq2, 111]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10010, pstmt-20013} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10010, pstmt-20013} executed. 1.4502 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10010, pstmt-20013, rs-50029} open
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10010, pstmt-20013, rs-50029} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10010, pstmt-20013, rs-50029} Result: [5, ldq2, 111, 111, null]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10010, pstmt-20013, rs-50029} closed
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10010, pstmt-20013} clearParameters. 
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10010} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10010} closed
-DEBUG Druid-ConnectionPool-Create-624475142 druid.sql.Connection - {conn-10011,procId-18} connected
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10011} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20014} created. select * from t_car where plateNumber=?
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20014} Parameters : [111]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20014} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20014} executed. 121.4562 millis. select * from t_car where plateNumber=?
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20014, rs-50030} open
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20014, rs-50030} Header: [id, plateNumber, model, color]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20014, rs-50030} closed
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20014} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10011} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10011} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20015} created. insert into t_car(plateNumber,model,color) values (?,?,?)
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20015} Parameters : [111, 111, 111]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20015} Types : [VARCHAR, VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20015} executed. 104.4072 millis. insert into t_car(plateNumber,model,color) values (?,?,?)
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20015, rs-50031} open
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20015, rs-50031} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20015, rs-50031} Result: [5]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10011, pstmt-20015, rs-50031} closed
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20015} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10011} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10011} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20016} created. update t_driver set carId=? where id=?
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20016} Parameters : [5, 5]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20016} Types : [BIGINT, BIGINT]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20016} executed. 153.7375 millis. update t_driver set carId=? where id=?
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10011, pstmt-20016} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10011} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10011} closed
-DEBUG Druid-ConnectionPool-Create-624475142 druid.sql.Connection - {conn-10012,procId-21} connected
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10012} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20017} created. select * from t_car where plateNumber=?
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20017} Parameters : [11]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20017} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20017} executed. 1.1317 millis. select * from t_car where plateNumber=?
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20017, rs-50032} open
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20017, rs-50032} Header: [id, plateNumber, model, color]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20017, rs-50032} closed
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20017} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10012} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10012} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20018} created. insert into t_car(plateNumber,model,color) values (?,?,?)
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20018} Parameters : [11, 11, 11]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20018} Types : [VARCHAR, VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20018} executed. 148.3176 millis. insert into t_car(plateNumber,model,color) values (?,?,?)
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20018, rs-50033} open
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20018, rs-50033} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20018, rs-50033} Result: [6]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10012, pstmt-20018, rs-50033} closed
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20018} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10012} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10012} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20019} created. update t_driver set carId=? where id=?
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20019} Parameters : [6, 5]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20019} Types : [BIGINT, BIGINT]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20019} executed. 70.9406 millis. update t_driver set carId=? where id=?
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10012, pstmt-20019} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10012} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10012} closed
-DEBUG Druid-ConnectionPool-Create-624475142 druid.sql.Connection - {conn-10013,procId-22} connected
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10013} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20020} created. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20020} Parameters : [ldq3]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20020} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20020} executed. 1.5164 millis. select * from t_driver where username=?
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20020, rs-50034} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20020, rs-50034} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20020, rs-50034} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20020} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10013} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10013} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20021} created. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20021} Parameters : [1111]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20021} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20021} executed. 0.9284 millis. select * from t_driver where phone=?
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20021, rs-50035} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20021, rs-50035} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20021, rs-50035} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20021} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10013} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10013} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20022} created. insert into t_driver(username,password,phone) values(?,?,?)
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20022} Parameters : [ldq3, 1111, 1111]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20022} Types : [VARCHAR, VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20022} executed. 159.3695 millis. insert into t_driver(username,password,phone) values(?,?,?)
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20022, rs-50036} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20022, rs-50036} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20022, rs-50036} Result: [6]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10013, pstmt-20022, rs-50036} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10013, pstmt-20022} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10013} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10001,procId-23} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-24} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-25} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-26} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-27} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10005} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10004} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10003} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10002} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10001} closed
-DEBUG Druid-ConnectionPool-Create-703841336 druid.sql.Connection - {conn-10006,procId-28} connected
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10006} pool-connect
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10006, pstmt-20000} created. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10006, pstmt-20000} Parameters : [ldq2, 111]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10006, pstmt-20000} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10006, pstmt-20000} executed. 29.3544 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} open
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} Result: [5, ldq2, 111, 111, 6]
-DEBUG http-nio-8080-exec-4 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} closed
-DEBUG http-nio-8080-exec-4 druid.sql.Statement - {conn-10006, pstmt-20000} clearParameters. 
-DEBUG http-nio-8080-exec-4 druid.sql.Connection - {conn-10006} pool-recycle
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10006} closed
-DEBUG Druid-ConnectionPool-Create-703841336 druid.sql.Connection - {conn-10007,procId-29} connected
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10007} pool-connect
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10007, pstmt-20001} created. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10007, pstmt-20001} Parameters : [ldq3, 1111]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10007, pstmt-20001} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10007, pstmt-20001} executed. 1.085 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} open
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} Result: [6, ldq3, 1111, 1111, null]
-DEBUG http-nio-8080-exec-8 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} closed
-DEBUG http-nio-8080-exec-8 druid.sql.Statement - {conn-10007, pstmt-20001} clearParameters. 
-DEBUG http-nio-8080-exec-8 druid.sql.Connection - {conn-10007} pool-recycle
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10007} closed
-DEBUG Druid-ConnectionPool-Create-703841336 druid.sql.Connection - {conn-10008,procId-30} connected
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20002} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20002} Parameters : [ldq3, 1111]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20002} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20002} executed. 1.4726 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} open
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} closed
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10008, pstmt-20002} clearParameters. 
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20002} Parameters : [ldq3, 1111]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20002} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20002} executed. 1.2722 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50003} open
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50003} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50003} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10008, pstmt-20002} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20003} created. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20003} Parameters : [ldq3, 1111]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20003} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20003} executed. 1.1429 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50004} open
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50004} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50004} Result: [6, ldq3, 1111, 1111, null]
-DEBUG http-nio-8080-exec-3 druid.sql.ResultSet - {conn-10008, pstmt-20003, rs-50004} closed
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10008, pstmt-20003} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10008} closed
-DEBUG Druid-ConnectionPool-Create-703841336 druid.sql.Connection - {conn-10009,procId-31} connected
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10009} pool-connect
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10009, pstmt-20004} created. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10009, pstmt-20004} Parameters : [ldq3, 1111]
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10009, pstmt-20004} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10009, pstmt-20004} executed. 1.3719 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50005} open
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50005} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50005} Result: [6, ldq3, 1111, 1111, null]
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50005} closed
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10009, pstmt-20004} clearParameters. 
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10009} pool-recycle
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10009} pool-connect
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20005} created. select * from t_car where plateNumber=?
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20005} Parameters : [12]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20005} Types : [VARCHAR]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20005} executed. 1.0951 millis. select * from t_car where plateNumber=?
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20005, rs-50006} open
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20005, rs-50006} Header: [id, plateNumber, model, color]
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20005, rs-50006} closed
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20005} clearParameters. 
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10009} pool-recycle
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10009} pool-connect
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20006} created. insert into t_car(plateNumber,model,color) values (?,?,?)
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20006} Parameters : [12, 21, 21]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20006} Types : [VARCHAR, VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20006} executed. 51.6911 millis. insert into t_car(plateNumber,model,color) values (?,?,?)
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20006, rs-50007} open
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20006, rs-50007} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20006, rs-50007} Result: [7]
-DEBUG http-nio-8080-exec-6 druid.sql.ResultSet - {conn-10009, pstmt-20006, rs-50007} closed
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20006} clearParameters. 
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10009} pool-recycle
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10009} pool-connect
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20007} created. update t_driver set carId=? where id=?
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20007} Parameters : [7, 6]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20007} Types : [BIGINT, BIGINT]
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20007} executed. 68.6248 millis. update t_driver set carId=? where id=?
-DEBUG http-nio-8080-exec-6 druid.sql.Statement - {conn-10009, pstmt-20007} clearParameters. 
-DEBUG http-nio-8080-exec-6 druid.sql.Connection - {conn-10009} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10009} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10009, pstmt-20004} Parameters : [ldq3, 1111]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10009, pstmt-20004} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10009, pstmt-20004} executed. 1.1467 millis. select * from t_driver where username=? and password=?
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50008} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50008} Header: [id, username, password, phone, carId]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50008} Result: [6, ldq3, 1111, 1111, 7]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10009, pstmt-20004, rs-50008} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10009, pstmt-20004} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10009} pool-recycle
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10009} closed
-DEBUG Druid-ConnectionPool-Create-703841336 druid.sql.Connection - {conn-10010,procId-32} connected
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10010} pool-connect
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10010, pstmt-20008} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,date,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10010, pstmt-20008} clearParameters. 
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10010} pool-recycle
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10010} closed
-DEBUG Druid-ConnectionPool-Create-703841336 druid.sql.Connection - {conn-10011,procId-33} connected
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10011} pool-connect
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10011, pstmt-20009} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10011, pstmt-20009} Parameters : [ldq1, 111]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10011, pstmt-20009} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10011, pstmt-20009} executed. 1.0635 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10011, pstmt-20009, rs-50009} open
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10011, pstmt-20009, rs-50009} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10011, pstmt-20009, rs-50009} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-7 druid.sql.ResultSet - {conn-10011, pstmt-20009, rs-50009} closed
-DEBUG http-nio-8080-exec-7 druid.sql.Statement - {conn-10011, pstmt-20009} clearParameters. 
-DEBUG http-nio-8080-exec-7 druid.sql.Connection - {conn-10011} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10001,procId-34} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-35} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-36} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-37} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-38} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10005} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10004} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10003} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10002} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10001} closed
-DEBUG Druid-ConnectionPool-Create-366180667 druid.sql.Connection - {conn-10006,procId-39} connected
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10006} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} Parameters : [ldq1, 111]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} executed. 14.2781 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} open
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10006, pstmt-20000, rs-50000} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10006} pool-recycle
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10006} closed
-DEBUG Druid-ConnectionPool-Create-366180667 druid.sql.Connection - {conn-10007,procId-40} connected
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10007} pool-connect
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20001} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20001} Parameters : [ldq1, 111]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20001} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20001} executed. 1.3065 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} open
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-10 druid.sql.ResultSet - {conn-10007, pstmt-20001, rs-50001} closed
-DEBUG http-nio-8080-exec-10 druid.sql.Statement - {conn-10007, pstmt-20001} clearParameters. 
-DEBUG http-nio-8080-exec-10 druid.sql.Connection - {conn-10007} pool-recycle
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10007} closed
-DEBUG Druid-ConnectionPool-Create-366180667 druid.sql.Connection - {conn-10008,procId-41} connected
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} pool-connect
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20002} created. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20002} Parameters : [ldq1, 111]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20002} Types : [VARCHAR, VARCHAR]
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20002} executed. 1.462 millis. select * from t_user where username=? and password=?
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} open
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} Header: [id, username, password, phone]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} Result: [11, ldq1, 111, 111]
-DEBUG http-nio-8080-exec-5 druid.sql.ResultSet - {conn-10008, pstmt-20002, rs-50002} closed
-DEBUG http-nio-8080-exec-5 druid.sql.Statement - {conn-10008, pstmt-20002} clearParameters. 
-DEBUG http-nio-8080-exec-5 druid.sql.Connection - {conn-10008} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10001,procId-42} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-43} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-44} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-45} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-46} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10005} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10004} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10003} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10002} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10001} closed
-DEBUG Druid-ConnectionPool-Create-1854922009 druid.sql.Connection - {conn-10006,procId-47} connected
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10006} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,date,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10006, pstmt-20000} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10006} pool-recycle
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10006} closed
-DEBUG Druid-ConnectionPool-Create-1854922009 druid.sql.Connection - {conn-10007,procId-48} connected
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10007} pool-connect
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10007, pstmt-20001} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,date,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-3 druid.sql.Statement - {conn-10007, pstmt-20001} clearParameters. 
-DEBUG http-nio-8080-exec-3 druid.sql.Connection - {conn-10007} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10001,procId-49} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-50} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-51} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-52} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-53} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,date,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10001,procId-54} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-55} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-56} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-57} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-58} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [11, 121.312388, 30.203692, 118.79647, 32.05838, 2019-07-24 19:57:00.0, 1, true]
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 210.8678 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1]
-DEBUG http-nio-8080-exec-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
-DEBUG http-nio-8080-exec-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG http-nio-8080-exec-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [11, 116.693508, 23.356268, 118.79647, 32.05838, 2019-07-24 19:57:00.0, 1, false]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 391.6254 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50001} open
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50001} Header: [GENERATED_KEY]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50001} Result: [2]
-DEBUG http-nio-8080-exec-2 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50001} closed
-DEBUG http-nio-8080-exec-2 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG http-nio-8080-exec-2 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10001,procId-365} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-366} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-367} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-368} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-369} connected
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 17.186658 millis. select * from t_reservation where isDispatched=?
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09, 2, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
-DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 2.599428 millis. select * from t_driver
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, null]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
-DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
-DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 13:00:00.0, 1, false]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 45.365173 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [GENERATED_KEY]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [3]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} closed
 DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} clearParameters. 
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
-DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20002} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
-DEBUG main druid.sql.Connection - {conn-10001,procId-370} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-371} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-372} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-373} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-374} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-115} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-116} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-117} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-118} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-119} connected
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 10.720375 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 37.345266 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09, 2, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
@@ -692,52 +32,69 @@ DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.136194 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 12.222407 millis. select * from t_driver
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, null]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 13:00:00.0, 1, false]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [BIGINT, DOUBLE, DOUBLE, DOUBLE, DOUBLE, TIMESTAMP, INTEGER, BOOLEAN]
-DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 3.870698 millis. insert into t_reservation(userId,start_lng,start_lat,end_lng,end_lat,startAt,num,isDispatched) values (?,?,?,?,?,?,?,?)
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} open
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Header: [GENERATED_KEY]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} Result: [4]
-DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50002} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 14.671388 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. select * from t_reservation where isDispatched=?
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [false]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [BOOLEAN]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 30.139709 millis. select * from t_reservation where isDispatched=?
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [1, 1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [2, 2, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} clearParameters. 
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [false]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [BOOLEAN]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 13.071744 millis. select * from t_reservation where isDispatched=?
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [1, 1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [2, 2, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} closed
 DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} clearParameters. 
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
-DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20002} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
-DEBUG main druid.sql.Connection - {conn-10001,procId-375} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-376} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-377} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-378} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-379} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-407} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-408} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-409} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-410} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-411} connected
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 13.214681 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 14.332552 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09, 2, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [4, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
@@ -745,40 +102,79 @@ DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 0.750274 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 6.016017 millis. select * from t_driver
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, null]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 2.54229 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} created. select * from t_reservation where isDispatched=?
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [false]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [BOOLEAN]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 1.689842 millis. select * from t_reservation where isDispatched=?
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06 00:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09 00:00:00.0, 2, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [3, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 00:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [4, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 00:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [5, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 13:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50003} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} clearParameters. 
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Parameters : [false]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} Types : [BOOLEAN]
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} executed. 1.846484 millis. select * from t_reservation where isDispatched=?
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06 00:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09 00:00:00.0, 2, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [3, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 00:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [4, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 00:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [5, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14 13:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20002, rs-50004} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20002} clearParameters. 
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
-DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20002} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
-DEBUG main druid.sql.Connection - {conn-10001,procId-380} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-381} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-382} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-383} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-384} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-412} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-413} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-414} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-415} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-416} connected
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 10.44376 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 13.666554 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09, 2, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [4, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
@@ -786,7 +182,7 @@ DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 6.280447 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 3.441598 millis. select * from t_driver
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
@@ -800,26 +196,23 @@ DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
-DEBUG main druid.sql.Connection - {conn-10001,procId-385} connected
-DEBUG main druid.sql.Connection - {conn-10002,procId-386} connected
-DEBUG main druid.sql.Connection - {conn-10003,procId-387} connected
-DEBUG main druid.sql.Connection - {conn-10004,procId-388} connected
-DEBUG main druid.sql.Connection - {conn-10005,procId-389} connected
+DEBUG main druid.sql.Connection - {conn-10001,procId-418} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-419} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-420} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-421} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-422} connected
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG main druid.sql.Connection - {conn-10005} pool-connect
 DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 10.461385 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 13.641767 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 1.0, 1.0, 1.0, 1.0, 2020-10-06, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 2.0, 2.0, 2.0, 2.0, 2020-10-09, 2, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [3, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
-DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [4, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-14, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
 DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
@@ -827,7 +220,159 @@ DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
 DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
-DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 0.923487 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 18.960124 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-423} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-424} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-425} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-426} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-427} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 8.064026 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 0.711979 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-428} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-429} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-430} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-431} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-432} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 13.162056 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 6.704629 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-433} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-434} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-435} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-436} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-437} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 12.139705 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 3.929094 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-442} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-443} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-444} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-445} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-446} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 13.430114 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [6, 1, 2.0, 3.0, 4.0, 4.0, 2020-10-15 03:00:00.0, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 1.72046 millis. select * from t_driver
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
 DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Result: [1, 司机一, 123456, 10086, 1]

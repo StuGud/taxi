@@ -1,15 +1,16 @@
 package com.srtp.taxi.algorithm;
 import com.srtp.taxi.entity.*;
-import com.srtp.taxi.service.*;
+import com.srtp.taxi.utils.RoadDetailUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class driverSelect {
     private Driver driver;
     //存放已确定路线，position类型的列表表示
-    private ArrayList<position> route = new ArrayList<position>();
+    private ArrayList<Position> route = new ArrayList<Position>();
     //存放车上乘客的终点作为待安排路线，position类型的列表表示
-    private ArrayList<position> temproute = new ArrayList<position>();
+    private ArrayList<Position> temproute = new ArrayList<Position>();
     //存放已确定路线，string类型列表存订单编号，第一次出现为订单的上车地点，第二次出现为订单的下车地点，数据库专用
     private ArrayList<Long> routefordb = new ArrayList<Long>();
     //存放车上乘客的终点作为待安排路线，string类型列表存订单编号，数据库专用
@@ -21,7 +22,7 @@ public class driverSelect {
     //预计到达下一个节点的时间
     private int nexttime=0;
     //车辆当前位置
-    private position pos=new position(1.01,2.01);// 根据海口需要初始化经纬度
+    private Position pos=new Position(1.01,2.01);// 根据海口需要初始化经纬度
     private ArrayList<Long> orderIDinSequence = new ArrayList<Long>();
 
     public driverSelect(Driver driver) {
@@ -41,25 +42,25 @@ public class driverSelect {
     }
     boolean isfull() { return maxnum <= nownum; }
     
-    public static double getdistance(position p1,position p2){
-        return 1;
+    public static double getdistance(Position p1, Position p2){
+        return RoadDetailUtils.getDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY());
     }
-    public static int gettime(position p1,position p2){
-        return 1;
+    public static int gettime(Position p1, Position p2){
+        return RoadDetailUtils.getTime(p1.getX(),p1.getY(),p2.getX(),p2.getY());
     }
     //对于每辆车而言的选择算法，第一个参数是未分配的订单，后一个参数是当前时间
-    void select(ArrayList<order> unselectorder, HashMap<Long,Integer> ordernumMap, int time) {
+    void select(ArrayList<ReservationA> unselectorder, HashMap<Long,Integer> ordernumMap, int time) {
         //如果当前车上没有乘客
         if(nownum == 0) {
-            double distance = 10000;
-            order selectorder = null;
-            for (com.srtp.taxi.algorithm.order order : unselectorder) {
+            double distance = 100000;
+            ReservationA selectorder = null;
+            for (ReservationA ReservationA : unselectorder) {
                 //选择最近乘客且时间符合的乘客，修改相关量，写回数据库，删除该乘客，若无不改；返回
-                double newdistance = getdistance(pos, order.getPos1());
-                int newtime=gettime(pos,order.getPos1());
-                if (newdistance < distance && ((time + newtime) > (order.getTime() - 10))) {
+                double newdistance = getdistance(pos, ReservationA.getPos1());
+                int newtime=gettime(pos, ReservationA.getPos1());
+                if (newdistance < distance && ((time + newtime) > (ReservationA.getTime() - 10*60))) {
                     distance = newdistance;
-                    selectorder = order;
+                    selectorder = ReservationA;
                 }
             }
             //如果选到了订单，更新数据
@@ -84,35 +85,35 @@ public class driverSelect {
         //如果车上有人
         if(nownum != 0) {
             double optimization = 0;
-            order selectorder = null;
-            for (com.srtp.taxi.algorithm.order order : unselectorder) {
+            ReservationA selectorder = null;
+            for (ReservationA ReservationA : unselectorder) {
 
                 //选择最优且符合时间、空位的乘客，修改相关量，删除该乘客，若无则去当前乘客目的地；返回
                 //通过人数和时间初筛选
-                double newdistance = getdistance(pos, order.getPos1());
-                int newtime=gettime(pos,order.getPos1());
-                if (maxnum - nownum >= order.getPassagerNum() && ((time + newtime) > (order.getTime() - 10))) {
+                double newdistance = getdistance(pos, ReservationA.getPos1());
+                int newtime=gettime(pos, ReservationA.getPos1());
+                if (maxnum - nownum >= ReservationA.getPassagerNum() && ((time + newtime) > (ReservationA.getTime() - 10))) {
                     //求先送完当前乘客再接新乘客的距离
                     double basedistance = getdistance(pos, temproute.get(0));
                     for (int j = 0; j < temproute.size() - 1; j++) {
                         basedistance += getdistance(temproute.get(j), temproute.get(j + 1));
                     }
-                    basedistance += getdistance(temproute.get(temproute.size() - 1), order.getPos1());
-                    basedistance += getdistance(order.getPos1(), order.getPos2());
+                    basedistance += getdistance(temproute.get(temproute.size() - 1), ReservationA.getPos1());
+                    basedistance += getdistance(ReservationA.getPos1(), ReservationA.getPos2());
                     //求先接新乘客再送当前乘客的距离，加上超时奖励
-                    double testdistance = getdistance(pos, order.getPos1());
-                    if (order.getTime() > time) {
-                        testdistance += (order.getTime() - time) * 40;
+                    double testdistance = getdistance(pos, ReservationA.getPos1());
+                    if (ReservationA.getTime() > time) {
+                        testdistance += (ReservationA.getTime() - time) * 40;
                     }
-                    testdistance += getdistance(order.getPos1(), temproute.get(0));
+                    testdistance += getdistance(ReservationA.getPos1(), temproute.get(0));
                     for (int j = 0; j < temproute.size() - 1; j++) {
                         testdistance += getdistance(temproute.get(j), temproute.get(j + 1));
                     }
-                    testdistance += getdistance(temproute.get(temproute.size() - 1), order.getPos2());
+                    testdistance += getdistance(temproute.get(temproute.size() - 1), ReservationA.getPos2());
                     //相减，选非零最大项的乘客，修改相关量
                     if (basedistance - testdistance > optimization) {
                         optimization = basedistance - testdistance;
-                        selectorder = order;
+                        selectorder = ReservationA;
 
                     }
 

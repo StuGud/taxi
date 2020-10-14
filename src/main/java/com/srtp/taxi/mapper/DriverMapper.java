@@ -2,6 +2,7 @@ package com.srtp.taxi.mapper;
 
 
 import com.srtp.taxi.entity.Driver;
+import com.srtp.taxi.entity.OnlineDriver;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
@@ -13,23 +14,16 @@ import java.util.List;
 @Component
 @Mapper
 public interface DriverMapper {
-    /**
-     * 根据用户名查询司机
-     * @param username 用户名
-     * @return  返回null,无此用户
-     */
+
     @Select("select * from t_driver where username=#{username}")
     Driver queryDriverByUsername(String username);
 
     @Select("select * from t_driver where phone=#{phone}")
     Driver queryDriverByPhone(String phone);
 
-    /**
-     * 根据用户名密码查询司机信息
-     * @param username
-     * @param password
-     * @return  返回null,无此司机
-     */
+    @Select("select * from t_driver where id=#{id}")
+    Driver queryDriverById(long id);
+
     @Select("select * from t_driver where username=#{username} and password=#{password}")
     Driver queryDriverByUsernameAndPassword(String username, String password);
 
@@ -50,4 +44,10 @@ public interface DriverMapper {
 
     @Update("update t_driver set password=#{password},phone=#{phone} where id=#{id}")
     boolean updateDriver(Driver driver);
+
+    @Select("select * from t_online_driver")
+    List<OnlineDriver> queryAllOnlineDriver();
+
+    @Select("select * from t_online_driver where id=#{id}")
+    OnlineDriver queryOnlineDriverById(long id);
 }

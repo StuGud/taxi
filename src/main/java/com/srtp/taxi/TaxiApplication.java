@@ -1,5 +1,6 @@
 package com.srtp.taxi;
 
+import com.srtp.taxi.algorithm.analyse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
