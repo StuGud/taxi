@@ -1,11 +1,8 @@
 package com.srtp.taxi.algorithm;
 
-import com.srtp.taxi.entity.Order;
 import com.srtp.taxi.entity.Reservation;
 
-import java.util.Calendar;
-
-public class order {
+public class ReservationA {
     private long orderID;
     private long passagerID;
     private long carID;
@@ -13,20 +10,15 @@ public class order {
     private long Time;
     //乘客数
     private int passagerNum;
-    private position pos1;
-    private position pos2;
-    public order(Reservation o) {
+    private Position pos1;
+    private Position pos2;
+    public ReservationA(Reservation o) {
         orderID=o.getId();
         passagerID=o.getUserId();
-        //用calender函数
-        Calendar c = Calendar.getInstance();
-        //用Order的Date.get……赋值；
-        c.set(0, Calendar.JANUARY,0,o.getStartAt().getHours(),o.getStartAt().getMinutes(),0);
-        Time=c.getTimeInMillis()/1000/60;
-//        Time=Integer.parseInt(String.valueOf(o.getStartAt().getTime()).substring(0, 10));
+        Time=o.getStartAt().getTime()/1000;
         passagerNum=o.getNum();
-        pos1=new position(o.getStart_lng(),o.getStart_lat());
-        pos2=new position(o.getEnd_lng(),o.getEnd_lat());
+        pos1=new Position(o.getStart_lng(),o.getStart_lat());
+        pos2=new Position(o.getEnd_lng(),o.getEnd_lat());
     }
 
     public long getOrderID() {
@@ -69,19 +61,19 @@ public class order {
         this.passagerNum = passagerNum;
     }
 
-    public position getPos1() {
+    public Position getPos1() {
         return pos1;
     }
 
-    public void setPos1(position pos1) {
+    public void setPos1(Position pos1) {
         this.pos1 = pos1;
     }
 
-    public position getPos2() {
+    public Position getPos2() {
         return pos2;
     }
 
-    public void setPos2(position pos2) {
+    public void setPos2(Position pos2) {
         this.pos2 = pos2;
     }
 }

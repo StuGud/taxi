@@ -841,3 +841,189 @@ DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
 DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
 DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-85} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-86} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-87} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-88} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-89} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 20.8999 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 12.86594 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-90} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-91} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-92} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-93} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-94} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [false]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [BOOLEAN]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 21.042072 millis. select * from t_reservation where isDispatched=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [1, 1, 118.820984405, 31.887238809, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Result: [2, 2, 118.794473, 32.054832, 118.84002, 31.95266, 2019-07-24, 1, false]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 27.213434 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-95} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-96} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-97} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-98} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-99} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=?
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : [8]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : [INTEGER]
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 19.9838 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=?
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 13.834931 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed
+DEBUG main druid.sql.Connection - {conn-10001,procId-100} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-101} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-102} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-103} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-104} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 32.213783 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 14.291448 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10001,procId-105} connected
+DEBUG main druid.sql.Connection - {conn-10002,procId-106} connected
+DEBUG main druid.sql.Connection - {conn-10003,procId-107} connected
+DEBUG main druid.sql.Connection - {conn-10004,procId-108} connected
+DEBUG main druid.sql.Connection - {conn-10005,procId-109} connected
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} created. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} executed. 27.423247 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50000} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-connect
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} created. select * from t_driver
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Parameters : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} Types : []
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} executed. 13.073056 millis. select * from t_driver
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} open
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} Header: [id, username, password, phone, carId]
+DEBUG scheduling-1 druid.sql.ResultSet - {conn-10005, pstmt-20001, rs-50001} closed
+DEBUG scheduling-1 druid.sql.Statement - {conn-10005, pstmt-20001} clearParameters. 
+DEBUG scheduling-1 druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG main druid.sql.Connection - {conn-10005} pool-connect
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Parameters : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} Types : []
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} executed. 14.447436 millis. select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=8
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} open
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} Header: [id, userId, start_lng, start_lat, end_lng, end_lat, startAt, num, isDispatched]
+DEBUG main druid.sql.ResultSet - {conn-10005, pstmt-20000, rs-50002} closed
+DEBUG main druid.sql.Statement - {conn-10005, pstmt-20000} clearParameters. 
+DEBUG main druid.sql.Connection - {conn-10005} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10005, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10005} closed

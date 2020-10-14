@@ -1,9 +1,8 @@
 package com.srtp.taxi.algorithm;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import com.srtp.taxi.entity.*;
 import com.srtp.taxi.service.*;
@@ -26,18 +25,30 @@ public class analyse {
     }
 
     @Scheduled(fixedRate = 8*60*60*1000)
-    public void execute(){
+    public void execute1(){
         int time = (int) (new Date().getTime()/1000);//秒
+        execute(time);
+    }
+
+    public void execute2() throws ParseException {
+        String time = "17-10-14 23:00:00";
+        SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd H:m:s");
+        format.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date date = format.parse(time);
+        execute((int) (date.getTime()/1000));
+    }
+
+    public void execute(int time){
         HashMap<Long,Integer> ordernumMap=new HashMap<Long,Integer>();
-        ArrayList<order> unselectorder = new ArrayList<order>();
+        ArrayList<ReservationA> unselectorder = new ArrayList<ReservationA>();
         ArrayList<driverSelect> alldriver = new ArrayList<>();
         ArrayList<driverSelect> tempdriver = new ArrayList<driverSelect>();
-//        访问数据库初始化以上变量
-        List<Reservation> listofReservation=reservationService.listAllNotDispatched();
+        //访问数据库初始化以上变量
+        List<Reservation> listofReservation=reservationService.listAllNotDispatchedInEightHours();
         List<Driver> listofDriver=driverService.listAll();
 
         for(Reservation r : listofReservation){
-            unselectorder.add(new order(r));
+            unselectorder.add(new ReservationA(r));
             ordernumMap.put(r.getId(),r.getNum());
         }
         for(Driver d : listofDriver){
@@ -55,7 +66,7 @@ public class analyse {
             for (driverSelect driver : tempdriver) {
                 driver.select(unselectorder,ordernumMap,time);
             }
-            time++;
+            time+=60;
         }
         //向数据库中写入所有司机的所有（按顺序）的乘客ID，路线（节点位置）信息
         for(driverSelect ds:alldriver) {

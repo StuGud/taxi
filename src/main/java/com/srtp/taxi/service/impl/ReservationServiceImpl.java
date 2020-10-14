@@ -54,6 +54,6 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public List<Reservation> listAllNotDispatchedInEightHours() {
-        return reservationMapper.queryReservationNotDispatchedByInterval(8);
+        return reservationMapper.queryReservationNotDispatchedByInterval8();
     }
 }
