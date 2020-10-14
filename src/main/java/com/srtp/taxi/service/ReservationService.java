@@ -3,6 +3,7 @@ package com.srtp.taxi.service;
 
 import com.srtp.taxi.entity.Reservation;
 
+import javax.naming.spi.ResolveResult;
 import java.util.List;
 
 /**
@@ -16,4 +17,5 @@ public interface ReservationService {
     List<Reservation> listReservationByUserId(long userId);
     List<Reservation> listAll();
     List<Reservation> listAllNotDispatched();
+    List<Reservation> listAllNotDispatchedInEightHours();
 }

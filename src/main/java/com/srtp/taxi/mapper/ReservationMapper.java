@@ -35,4 +35,6 @@ public interface ReservationMapper {
     @Select("select * from t_reservation where isDispatched=#{isDispatched}")
     List<Reservation> queryReservationByIsDispatched(boolean isDispatched);
 
+    @Select("select * from t_reservation where isDispatched=false and hour(timediff(startAt,now()))>=0 and hour(timediff(startAt,now()))<=#{hour}")
+    List<Reservation> queryReservationNotDispatchedByInterval(int hour);
 }

@@ -25,7 +25,7 @@ public class analyse {
         this.driverService = driverService;
     }
 
-    @Scheduled(fixedRate = 15*60*1000)
+    @Scheduled(fixedRate = 8*60*60*1000)
     public void execute(){
         int time = (int) (new Date().getTime()/1000);//秒
         HashMap<Long,Integer> ordernumMap=new HashMap<Long,Integer>();
