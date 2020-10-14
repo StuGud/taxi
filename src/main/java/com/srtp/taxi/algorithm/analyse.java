@@ -1,24 +1,36 @@
 package com.srtp.taxi.algorithm;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import com.srtp.taxi.entity.*;
 import com.srtp.taxi.service.*;
-import com.srtp.taxi.service.impl.DispatchServiceImpl;
-import com.srtp.taxi.service.impl.DriverServiceImpl;
-import com.srtp.taxi.service.impl.ReservationServiceImpl;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
+@Component("DispatchAlg")
 public class analyse {
-    public static DispatchService dispatchService=new DispatchServiceImpl();
-    public static ReservationService reservationService=new ReservationServiceImpl();
-    public static DriverService driverService=new DriverServiceImpl();
-    public static void execute(){
-        int time = 0;//time需要初始化
+    final
+    DispatchService dispatchService;
+    final
+    ReservationService reservationService;
+    final
+    DriverService driverService;
+
+    public analyse(DispatchService dispatchService, ReservationService reservationService, DriverService driverService) {
+        this.dispatchService = dispatchService;
+        this.reservationService = reservationService;
+        this.driverService = driverService;
+    }
+
+    @Scheduled(fixedRate = 15*60*1000)
+    public void execute(){
+        int time = (int) (new Date().getTime()/1000);//秒
         HashMap<Long,Integer> ordernumMap=new HashMap<Long,Integer>();
         ArrayList<order> unselectorder = new ArrayList<order>();
-        ArrayList<driverSelect> alldriver = new ArrayList<driverSelect>();
+        ArrayList<driverSelect> alldriver = new ArrayList<>();
         ArrayList<driverSelect> tempdriver = new ArrayList<driverSelect>();
 //        访问数据库初始化以上变量
         List<Reservation> listofReservation=reservationService.listAllNotDispatched();

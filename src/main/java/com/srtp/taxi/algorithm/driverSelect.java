@@ -21,7 +21,7 @@ public class driverSelect {
     //预计到达下一个节点的时间
     private int nexttime=0;
     //车辆当前位置
-    private position pos=new position(0,0);// 根据海口需要初始化经纬度
+    private position pos=new position(1.01,2.01);// 根据海口需要初始化经纬度
     private ArrayList<Long> orderIDinSequence = new ArrayList<Long>();
 
     public driverSelect(Driver driver) {
