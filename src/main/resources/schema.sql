@@ -31,7 +31,7 @@ create table  if not exists t_reservation
     start_lat double not null ,
     end_lng double not null,
     end_lat double not null ,
-    startAt DATE not null ,
+    startAt datetime not null ,
     num int not null ,
     isDispatched boolean not null
 );
@@ -52,8 +52,8 @@ create table  if not exists t_order
     start_lat double not null ,
     end_lng double not null,
     end_lat double not null ,
-    startAt DATE not null ,
-    finishedAt DATE not null ,
+    startAt datetime not null ,
+    finishedAt datetime not null ,
     num int not null
 );
 
@@ -72,3 +72,4 @@ alter table t_order
     add foreign key (userId) references t_user(id);
 alter table t_order
     add foreign key (driverId) references t_driver(id);
+

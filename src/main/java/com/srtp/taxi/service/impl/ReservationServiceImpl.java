@@ -51,4 +51,9 @@ public class ReservationServiceImpl implements ReservationService {
     public List<Reservation> listAllNotDispatched() {
         return reservationMapper.queryReservationByIsDispatched(false);
     }
+
+    @Override
+    public List<Reservation> listAllNotDispatchedInEightHours() {
+        return reservationMapper.queryReservationNotDispatchedByInterval(8);
+    }
 }
