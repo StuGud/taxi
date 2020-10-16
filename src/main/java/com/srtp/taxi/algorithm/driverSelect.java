@@ -3,6 +3,7 @@ import com.srtp.taxi.entity.*;
 import com.srtp.taxi.utils.RoadDetailUtils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class driverSelect {
@@ -20,17 +21,23 @@ public class driverSelect {
     //目前载客
     private int nownum=0;
     //预计到达下一个节点的时间
-    private int nexttime=0;
+    private int nexttime;
     //车辆当前位置
-    private Position pos=new Position(1.01,2.01);// 根据海口需要初始化经纬度
+    private Position pos=new Position(118.820984405,31.887238809);// 根据海口需要初始化经纬度
     private ArrayList<Long> orderIDinSequence = new ArrayList<Long>();
 
-    public driverSelect(Driver driver) {
+    public driverSelect(Driver driver,int time,Position p) {
         this.driver = driver;
+        this.nexttime=time;
+        this.pos=p;
     }
 
     public Driver getDriver() {
         return driver;
+    }
+
+    public ArrayList<Long> getTemproutefordb() {
+        return temproutefordb;
     }
 
     public ArrayList<Long> getRoutefordb() {
@@ -43,10 +50,26 @@ public class driverSelect {
     boolean isfull() { return maxnum <= nownum; }
     
     public static double getdistance(Position p1, Position p2){
-        return RoadDetailUtils.getDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+        int dist;
+        while(true){
+            try{
+                dist=RoadDetailUtils.getDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+                break;
+            }catch (Exception ignored){
+            }
+        }
+        return dist;
     }
     public static int gettime(Position p1, Position p2){
-        return RoadDetailUtils.getTime(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+        int time;
+        while(true){
+            try {
+                time=RoadDetailUtils.getTime(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+                break;
+            }catch (Exception ignored){}
+        }
+
+        return time;
     }
     //对于每辆车而言的选择算法，第一个参数是未分配的订单，后一个参数是当前时间
     void select(ArrayList<ReservationA> unselectorder, HashMap<Long,Integer> ordernumMap, int time) {
@@ -83,7 +106,7 @@ public class driverSelect {
             }
         }
         //如果车上有人
-        if(nownum != 0) {
+        else{
             double optimization = 0;
             ReservationA selectorder = null;
             for (ReservationA ReservationA : unselectorder) {
@@ -92,7 +115,7 @@ public class driverSelect {
                 //通过人数和时间初筛选
                 double newdistance = getdistance(pos, ReservationA.getPos1());
                 int newtime=gettime(pos, ReservationA.getPos1());
-                if (maxnum - nownum >= ReservationA.getPassagerNum() && ((time + newtime) > (ReservationA.getTime() - 10))) {
+                if (maxnum - nownum >= ReservationA.getPassagerNum() && ((time + newtime) > (ReservationA.getTime() - 10*60))) {
                     //求先送完当前乘客再接新乘客的距离
                     double basedistance = getdistance(pos, temproute.get(0));
                     for (int j = 0; j < temproute.size() - 1; j++) {
@@ -137,7 +160,7 @@ public class driverSelect {
 
             }
             //若无，送当前最优乘客，修改相关量，尚未完成
-            if(selectorder == null) {
+            else{
                 //乘客人数未知，暂定为1
                 nownum -= ordernumMap.get(orderIDinSequence.get(0));
                 orderIDinSequence.remove(0);

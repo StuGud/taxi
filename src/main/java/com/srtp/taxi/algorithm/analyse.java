@@ -24,14 +24,15 @@ public class analyse {
         this.driverService = driverService;
     }
 
-    @Scheduled(fixedRate = 8*60*60*1000)
+
     public void execute1(){
         int time = (int) (new Date().getTime()/1000);//秒
         execute(time);
     }
 
+    @Scheduled(fixedRate = 8*60*60*1000)
     public void execute2() throws ParseException {
-        String time = "17-10-14 23:00:00";
+        String time = "20-10-15 08:00:00";
         SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd H:m:s");
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date date = format.parse(time);
@@ -45,21 +46,22 @@ public class analyse {
         ArrayList<driverSelect> tempdriver = new ArrayList<driverSelect>();
         //访问数据库初始化以上变量
         List<Reservation> listofReservation=reservationService.listAllNotDispatchedInEightHours();
-        List<Driver> listofDriver=driverService.listAll();
+        List<OnlineDriver> listofDriver=driverService.listAllOnline();
 
         for(Reservation r : listofReservation){
             unselectorder.add(new ReservationA(r));
             ordernumMap.put(r.getId(),r.getNum());
         }
-        for(Driver d : listofDriver){
-            alldriver.add(new driverSelect(d));
+        for(OnlineDriver d : listofDriver){
+            Driver dd=driverService.findDriverById(d.getId());
+            alldriver.add(new driverSelect(dd,time,new Position(d.getLng(),d.getLat())));
         }
 
         while(!unselectorder.isEmpty()) {
             //筛选到达且不满载的车辆
             tempdriver.clear();
             for (driverSelect value : alldriver) {
-                if (value.getNexttime() == time)
+                if (value.getNexttime() <= time)
                     tempdriver.add(value);
             }
             //对每个符合条件的车辆规划
@@ -74,7 +76,9 @@ public class analyse {
             Dispatch dispatch=new Dispatch();
             dispatch.setDriverId(ds.getDriver().getId());
             List<ReservationDispatched> reservationList=new ArrayList<ReservationDispatched>();
-            for(Long id:ds.getRoutefordb()){
+            ArrayList<Long> route=ds.getRoutefordb();
+            route.addAll(ds.getTemproutefordb());
+            for(Long id:route){
                 ReservationDispatched reservationDispatched=new ReservationDispatched();
                 reservationDispatched.setId(id);
                 reservationList.add(reservationDispatched);
