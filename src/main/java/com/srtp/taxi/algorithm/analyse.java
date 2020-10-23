@@ -24,13 +24,12 @@ public class analyse {
         this.driverService = driverService;
     }
 
-
+    @Scheduled(fixedRate = 8*60*60*1000)
     public void execute1(){
         int time = (int) (new Date().getTime()/1000);//秒
         execute(time);
     }
 
-    @Scheduled(fixedRate = 8*60*60*1000)
     public void execute2() throws ParseException {
         String time = "20-10-15 08:00:00";
         SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd H:m:s");
@@ -40,10 +39,17 @@ public class analyse {
     }
 
     public void execute(int time){
-        HashMap<Long,Integer> ordernumMap=new HashMap<Long,Integer>();
-        ArrayList<ReservationA> unselectorder = new ArrayList<ReservationA>();
+        HashMap<Long,Integer> ordernumMap=new HashMap<>();
+        ArrayList<ReservationA> unselectorder = new ArrayList<>();
         ArrayList<driverSelect> alldriver = new ArrayList<>();
-        ArrayList<driverSelect> tempdriver = new ArrayList<driverSelect>();
+//        ArrayList<driverSelect> tempdriver = new ArrayList<>();
+        Comparator<driverSelect> driverSelectComparator=new Comparator<driverSelect>() {
+            @Override
+            public int compare(driverSelect o1, driverSelect o2) {
+                return o1.getNexttime()-o2.getNexttime();
+            }
+        };
+        Queue<driverSelect> driverSelectQueue=new PriorityQueue<>(driverSelectComparator);
         //访问数据库初始化以上变量
         List<Reservation> listofReservation=reservationService.listAllNotDispatchedInEightHours();
         List<OnlineDriver> listofDriver=driverService.listAllOnline();
@@ -56,20 +62,16 @@ public class analyse {
             Driver dd=driverService.findDriverById(d.getId());
             alldriver.add(new driverSelect(dd,time,new Position(d.getLng(),d.getLat())));
         }
+        driverSelectQueue.addAll(alldriver);
 
         while(!unselectorder.isEmpty()) {
-            //筛选到达且不满载的车辆
-            tempdriver.clear();
-            for (driverSelect value : alldriver) {
-                if (value.getNexttime() <= time)
-                    tempdriver.add(value);
-            }
-            //对每个符合条件的车辆规划
-            for (driverSelect driver : tempdriver) {
-                driver.select(unselectorder,ordernumMap,time);
-            }
+            //下一个到达的driver
+            driverSelect driver=driverSelectQueue.poll();
+            assert driver != null;
+            time=driver.getNexttime();
+            driver.select(unselectorder,ordernumMap,time);
+            driverSelectQueue.add(driver);
             System.out.println(time);
-            time+=60;
         }
         //向数据库中写入所有司机的所有（按顺序）的乘客ID，路线（节点位置）信息
         for(driverSelect ds:alldriver) {

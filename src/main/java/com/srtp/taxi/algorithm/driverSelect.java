@@ -55,7 +55,8 @@ public class driverSelect {
             try{
                 dist=RoadDetailUtils.getDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY());
                 break;
-            }catch (Exception ignored){
+            }catch (Exception e){
+                System.out.print(e.getMessage()+"\n");
             }
         }
         return dist;
@@ -66,7 +67,7 @@ public class driverSelect {
             try {
                 time=RoadDetailUtils.getTime(p1.getX(),p1.getY(),p2.getX(),p2.getY());
                 break;
-            }catch (Exception ignored){}
+            }catch (Exception e){System.out.print(e.getMessage()+"\n");}
         }
 
         return time;
