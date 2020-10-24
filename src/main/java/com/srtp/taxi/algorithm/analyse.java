@@ -6,6 +6,7 @@ import java.util.*;
 
 import com.srtp.taxi.entity.*;
 import com.srtp.taxi.service.*;
+import com.srtp.taxi.utils.RoadDetailUtils;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -25,12 +26,12 @@ public class analyse {
     }
 
     @Scheduled(fixedRate = 8*60*60*1000)
-    public void execute1(){
+    public void execute1() throws InterruptedException {
         int time = (int) (new Date().getTime()/1000);//秒
         execute(time);
     }
 
-    public void execute2() throws ParseException {
+    public void execute2() throws ParseException, InterruptedException {
         String time = "20-10-15 08:00:00";
         SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd H:m:s");
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -38,7 +39,28 @@ public class analyse {
         execute((int) (date.getTime()/1000));
     }
 
-    public void execute(int time){
+    public void execute(int time) throws InterruptedException {
+
+
+        ArrayList<double []> timeList=new ArrayList<>();
+        ArrayList<double []> disList=new ArrayList<>();
+        var sList=reservationService.listAll();
+        int size=sList.size();
+        double slat=0.0;
+        double slng=0.0;
+        double [] elat=new double[size];
+        double [] elng=new double[size];
+        int k=0;
+        for(int j=0;j<size;j++){
+            slng=sList.get(j).getStart_lng();
+            slat=sList.get(j).getStart_lat();
+            for (int i=0;i<size;i++) {
+                elng[i]=sList.get(i).getEnd_lng();
+                elat[i]=sList.get(i).getEnd_lat();
+            }
+            disList.addAll(RoadDetailUtils.getDistance(slng,slat,elng,elat));
+            timeList.addAll(RoadDetailUtils.getTime(slng,slat,elng,elat));
+        }
         HashMap<Long,Integer> ordernumMap=new HashMap<>();
         ArrayList<ReservationA> unselectorder = new ArrayList<>();
         ArrayList<driverSelect> alldriver = new ArrayList<>();
@@ -60,7 +82,7 @@ public class analyse {
         }
         for(OnlineDriver d : listofDriver){
             Driver dd=driverService.findDriverById(d.getId());
-            alldriver.add(new driverSelect(dd,time,new Position(d.getLng(),d.getLat())));
+            alldriver.add(new driverSelect(disList,timeList,dd,time,new Position(d.getLng(),d.getLat())));
         }
         driverSelectQueue.addAll(alldriver);
 
@@ -80,6 +102,7 @@ public class analyse {
             List<ReservationDispatched> reservationList=new ArrayList<ReservationDispatched>();
             ArrayList<Long> route=ds.getRoutefordb();
             route.addAll(ds.getTemproutefordb());
+
             for(Long id:route){
                 ReservationDispatched reservationDispatched=new ReservationDispatched();
                 reservationDispatched.setId(id);
@@ -90,4 +113,5 @@ public class analyse {
             dispatchService.saveDispatch(dispatch);
         }
     }
+
 }

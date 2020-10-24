@@ -26,10 +26,15 @@ public class driverSelect {
     private Position pos=new Position(118.820984405,31.887238809);// 根据海口需要初始化经纬度
     private ArrayList<Long> orderIDinSequence = new ArrayList<Long>();
 
-    public driverSelect(Driver driver,int time,Position p) {
+    private static ArrayList<double []> timeList;
+    private static ArrayList<double []> disList;
+
+    public driverSelect(ArrayList<double []>disList,ArrayList<double []>timeList,Driver driver,int time,Position p) {
         this.driver = driver;
         this.nexttime=time;
         this.pos=p;
+        this.timeList=timeList;
+        this.disList=disList;
     }
 
     public Driver getDriver() {
@@ -48,12 +53,12 @@ public class driverSelect {
         return nexttime;
     }
     boolean isfull() { return maxnum <= nownum; }
-    
+
     public static double getdistance(Position p1, Position p2){
         int dist;
         while(true){
             try{
-                dist=RoadDetailUtils.getDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+                dist=RoadDetailUtils.getTwoDistance(p1.getX(),p1.getY(),p2.getX(),p2.getY(),disList);
                 break;
             }catch (Exception e){
                 System.out.print(e.getMessage()+"\n");
@@ -65,7 +70,8 @@ public class driverSelect {
         int time;
         while(true){
             try {
-                time=RoadDetailUtils.getTime(p1.getX(),p1.getY(),p2.getX(),p2.getY());
+                time=RoadDetailUtils.getTwoTime(p1.getX(),p1.getY(),p2.getX(),p2.getY(),timeList);
+                // System.out.println(dist);
                 break;
             }catch (Exception e){System.out.print(e.getMessage()+"\n");}
         }
