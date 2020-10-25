@@ -61,6 +61,24 @@ public class analyse {
             disList.addAll(RoadDetailUtils.getDistance(slng,slat,elng,elat));
             timeList.addAll(RoadDetailUtils.getTime(slng,slat,elng,elat));
         }
+            double pos1=118.820984405;
+            double pos2=31.887238809;
+            for (int i = 0; i<size; i++) {
+                elng[i]=sList.get(i).getEnd_lng();
+                elat[i]=sList.get(i).getEnd_lat();
+            }
+            disList.addAll(RoadDetailUtils.getDistance(pos1,pos2,elng,elat));
+            timeList.addAll(RoadDetailUtils.getTime(pos1,pos2,elng,elat));
+
+            for (var i = 0; i<size; i++) {
+                elng[i]=sList.get(i).getStart_lng();
+                elat[i]=sList.get(i).getStart_lat();
+            }
+            disList.addAll(RoadDetailUtils.getDistance(pos1,pos2,elng,elat));
+            timeList.addAll(RoadDetailUtils.getTime(pos1,pos2,elng,elat));
+
+
+
         HashMap<Long,Integer> ordernumMap=new HashMap<>();
         ArrayList<ReservationA> unselectorder = new ArrayList<>();
         ArrayList<driverSelect> alldriver = new ArrayList<>();
@@ -112,6 +130,6 @@ public class analyse {
             dispatch.setReservationList(reservationList);
             dispatchService.saveDispatch(dispatch);
         }
-    }
+       }
 
 }
