@@ -28,13 +28,15 @@ public class driverSelect {
 
     private static ArrayList<double []> timeList;
     private static ArrayList<double []> disList;
+    public long totaltime=0;// for debug only
+    public long qureytime=0;// for debug only
 
     public driverSelect(ArrayList<double []>disList,ArrayList<double []>timeList,Driver driver,int time,Position p) {
         this.driver = driver;
         this.nexttime=time;
         this.pos=p;
-        this.timeList=timeList;
-        this.disList=disList;
+        driverSelect.timeList =timeList;
+        driverSelect.disList =disList;
     }
 
     public Driver getDriver() {
@@ -54,7 +56,8 @@ public class driverSelect {
     }
     boolean isfull() { return maxnum <= nownum; }
 
-    public static double getdistance(Position p1, Position p2){
+    public double getdistance(Position p1, Position p2){
+        long a=System.currentTimeMillis();// for debug only
         int dist;
         while(true){
             try{
@@ -64,9 +67,11 @@ public class driverSelect {
                 System.out.print(e.getMessage()+"\n");
             }
         }
+        qureytime+=System.currentTimeMillis()-a;// for debug only
         return dist;
     }
-    public static int gettime(Position p1, Position p2){
+    public int gettime(Position p1, Position p2){
+        long a=System.currentTimeMillis();// for debug only
         int time;
         while(true){
             try {
@@ -75,12 +80,13 @@ public class driverSelect {
                 break;
             }catch (Exception e){System.out.print(e.getMessage()+"\n");}
         }
-
+        qureytime+=System.currentTimeMillis()-a;// for debug only
         return time;
     }
     //对于每辆车而言的选择算法，第一个参数是未分配的订单，后一个参数是当前时间
     void select(ArrayList<ReservationA> unselectorder, HashMap<Long,Integer> ordernumMap, int time) {
         //如果当前车上没有乘客
+        long a=System.currentTimeMillis();// for debug only
         if(nownum == 0) {
             double distance = 100000;
             ReservationA selectorder = null;
@@ -180,7 +186,7 @@ public class driverSelect {
                 temproutefordb.remove(0);
             }
         }
-
+        totaltime+=System.currentTimeMillis()-a;// for debug only
     }
 
 }

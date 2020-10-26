@@ -50,19 +50,18 @@ public class analyse {
         double slng=0.0;
         double [] elat=new double[size];
         double [] elng=new double[size];
-        int k=0;
-        for(int j=0;j<size;j++){
-            slng=sList.get(j).getStart_lng();
-            slat=sList.get(j).getStart_lat();
-            for (int i=0;i<size;i++) {
-                elng[i]=sList.get(i).getEnd_lng();
-                elat[i]=sList.get(i).getEnd_lat();
+        for (Reservation reservation : sList) {
+            slng = reservation.getStart_lng();
+            slat = reservation.getStart_lat();
+            for (int i = 0; i < size; i++) {
+                elng[i] = sList.get(i).getEnd_lng();
+                elat[i] = sList.get(i).getEnd_lat();
             }
-            disList.addAll(RoadDetailUtils.getDistance(slng,slat,elng,elat));
-            timeList.addAll(RoadDetailUtils.getTime(slng,slat,elng,elat));
+            disList.addAll(RoadDetailUtils.getDistance(slng, slat, elng, elat));
+            timeList.addAll(RoadDetailUtils.getTime(slng, slat, elng, elat));
         }
-            double pos1=118.820984405;
-            double pos2=31.887238809;
+            double pos1=110.3645;
+            double pos2=20.0353;
             for (int i = 0; i<size; i++) {
                 elng[i]=sList.get(i).getEnd_lng();
                 elat[i]=sList.get(i).getEnd_lat();
@@ -108,10 +107,16 @@ public class analyse {
             //下一个到达的driver
             driverSelect driver=driverSelectQueue.poll();
             assert driver != null;
-            time=driver.getNexttime();
+            if(driver.getNexttime()>time){
+                time = driver.getNexttime();
+            }
+            else {
+                time+=5*60;
+            }
             driver.select(unselectorder,ordernumMap,time);
             driverSelectQueue.add(driver);
-            System.out.println(time);
+            System.out.println(time);// for debug only
+            System.out.println(driver.qureytime+"/"+driver.totaltime);// for debug only
         }
         //向数据库中写入所有司机的所有（按顺序）的乘客ID，路线（节点位置）信息
         for(driverSelect ds:alldriver) {
